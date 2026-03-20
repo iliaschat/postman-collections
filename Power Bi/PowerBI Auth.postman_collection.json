@@ -62,12 +62,12 @@
             },
             {
               "key": "password",
-              "value": "qCwkJY7N!1!!",
+              "value": "{{password}}",
               "type": "string"
             },
             {
               "key": "username",
-              "value": "erik.nylander.contractor@pepsico.com",
+              "value": "{{username}}",
               "type": "string"
             },
             {
@@ -167,12 +167,12 @@
             },
             {
               "key": "password",
-              "value": "qCwkJY7N!1!!",
+              "value": "{{password}}",
               "type": "string"
             },
             {
               "key": "username",
-              "value": "erik.nylander.contractor@pepsico.com",
+              "value": "{{username}}",
               "type": "string"
             },
             {
@@ -197,7 +197,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "grant_type=client_credentials\r\n&client_id=83ea6a07-3d2b-4db7-94d1-c1f9e09aaa68\r\n&client_secret=had7Q~qVb1Xf3rOCMQ0sJYz3hz0OMY9zAjh-t\r\n&scope=openid offline_access https://analysis.windows.net/powerbi/api/.default\r\n"
+          "raw": "grant_type=client_credentials\r\n&client_id={{client_id}}\r\n&client_secret={{client_secret}}\r\n&scope=openid offline_access https://analysis.windows.net/powerbi/api/.default\r\n"
         },
         "url": {
           "raw": "https://api.powerbi.com/v1.0/myorg/reports",
