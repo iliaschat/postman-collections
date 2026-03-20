@@ -1,0 +1,220 @@
+{
+  "info": {
+    "_postman_id": "6272a002-4239-451d-be8c-1c60cf35e26f",
+    "name": "PowerBI Auth",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1487263"
+  },
+  "item": [
+    {
+      "name": "PowerBI auth code",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "clientSecret",
+              "value": "{{client_secret}}",
+              "type": "string"
+            },
+            {
+              "key": "clientId",
+              "value": "{{clientid}}",
+              "type": "string"
+            },
+            {
+              "key": "scope",
+              "value": "openid offline_access https://analysis.windows.net/powerbi/api/.default",
+              "type": "string"
+            },
+            {
+              "key": "authUrl",
+              "value": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+              "type": "string"
+            },
+            {
+              "key": "accessTokenUrl",
+              "value": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+              "type": "string"
+            },
+            {
+              "key": "useBrowser",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "grant_type",
+              "value": "authorization_code",
+              "type": "string"
+            },
+            {
+              "key": "state",
+              "value": "12345",
+              "type": "string"
+            },
+            {
+              "key": "redirect_uri",
+              "value": "https://localhost/redirect",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "qCwkJY7N!1!!",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "erik.nylander.contractor@pepsico.com",
+              "type": "string"
+            },
+            {
+              "key": "tokenName",
+              "value": "PowerbI",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "grant_type=client_credentials\r\n&client_id=83ea6a07-3d2b-4db7-94d1-c1f9e09aaa68\r\n&client_secret=had7Q~qVb1Xf3rOCMQ0sJYz3hz0OMY9zAjh-t\r\n&scope=openid offline_access https://analysis.windows.net/powerbi/api/.default\r\n"
+        },
+        "url": {
+          "raw": "https://api.powerbi.com/v1.0/myorg/reports",
+          "protocol": "https",
+          "host": [
+            "api",
+            "powerbi",
+            "com"
+          ],
+          "path": [
+            "v1.0",
+            "myorg",
+            "reports"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PowerBI auth code refresh",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "clientSecret",
+              "value": "{{client_secret}}",
+              "type": "string"
+            },
+            {
+              "key": "clientId",
+              "value": "{{clientid}}",
+              "type": "string"
+            },
+            {
+              "key": "scope",
+              "value": "openid offline_access https://analysis.windows.net/powerbi/api/.default",
+              "type": "string"
+            },
+            {
+              "key": "authUrl",
+              "value": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+              "type": "string"
+            },
+            {
+              "key": "accessTokenUrl",
+              "value": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+              "type": "string"
+            },
+            {
+              "key": "useBrowser",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "grant_type",
+              "value": "authorization_code",
+              "type": "string"
+            },
+            {
+              "key": "state",
+              "value": "12345",
+              "type": "string"
+            },
+            {
+              "key": "redirect_uri",
+              "value": "https://localhost/redirect",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "qCwkJY7N!1!!",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "erik.nylander.contractor@pepsico.com",
+              "type": "string"
+            },
+            {
+              "key": "tokenName",
+              "value": "PowerbI",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "grant_type=client_credentials\r\n&client_id=83ea6a07-3d2b-4db7-94d1-c1f9e09aaa68\r\n&client_secret=had7Q~qVb1Xf3rOCMQ0sJYz3hz0OMY9zAjh-t\r\n&scope=openid offline_access https://analysis.windows.net/powerbi/api/.default\r\n"
+        },
+        "url": {
+          "raw": "https://api.powerbi.com/v1.0/myorg/reports",
+          "protocol": "https",
+          "host": [
+            "api",
+            "powerbi",
+            "com"
+          ],
+          "path": [
+            "v1.0",
+            "myorg",
+            "reports"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

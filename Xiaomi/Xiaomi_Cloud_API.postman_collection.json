@@ -1,0 +1,517 @@
+{
+	"info": {
+		"name": "Xiaomi Cloud API",
+		"description": "Collection for Xiaomi Cloud API endpoints based on token_extractor.py",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url_cn",
+			"value": "https://api.io.mi.com",
+			"type": "string"
+		},
+		{
+			"key": "base_url_country",
+			"value": "https://{{country}}.api.io.mi.com",
+			"type": "string"
+		},
+		{
+			"key": "account_base_url",
+			"value": "https://account.xiaomi.com",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "country",
+			"value": "de",
+			"type": "string",
+			"description": "Country code: cn, de, us, ru, tw, sg, in, i2"
+		},
+		{
+			"key": "_sign",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "ssecurity",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "userId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "cUserId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "passToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "serviceToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "location",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "device_id",
+			"value": "abcdef",
+			"type": "string"
+		},
+		{
+			"key": "user_agent",
+			"value": "Android-7.1.1-1.0.0-ONEPLUS A3010-136-ABCDEFGHIJKLM APP/xiaomi.smarthome APPV/62830",
+			"type": "string"
+		},
+		{
+			"key": "home_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "home_owner",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "device_did",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login Step 1 - Get Sign",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    const responseText = pm.response.text();",
+									"    const jsonText = responseText.replace('&&&START&&&', '');",
+									"    const responseJson = JSON.parse(jsonText);",
+									"    ",
+									"    if (responseJson._sign) {",
+									"        pm.collectionVariables.set('_sign', responseJson._sign);",
+									"        console.log('Sign extracted: ' + responseJson._sign);",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "{{account_base_url}}/pass/serviceLogin?sid=xiaomiio&_json=true",
+							"host": [
+								"{{account_base_url}}"
+							],
+							"path": [
+								"pass",
+								"serviceLogin"
+							],
+							"query": [
+								{
+									"key": "sid",
+									"value": "xiaomiio"
+								},
+								{
+									"key": "_json",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Step 2 - Authenticate",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const CryptoJS = require('crypto-js');",
+									"const password = pm.collectionVariables.get('password');",
+									"const passwordHash = CryptoJS.MD5(password).toString().toUpperCase();",
+									"pm.collectionVariables.set('password_hash', passwordHash);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    const responseText = pm.response.text();",
+									"    const jsonText = responseText.replace('&&&START&&&', '');",
+									"    const responseJson = JSON.parse(jsonText);",
+									"    ",
+									"    if (responseJson.ssecurity) {",
+									"        pm.collectionVariables.set('ssecurity', responseJson.ssecurity);",
+									"        pm.collectionVariables.set('userId', responseJson.userId);",
+									"        pm.collectionVariables.set('cUserId', responseJson.cUserId);",
+									"        pm.collectionVariables.set('passToken', responseJson.passToken);",
+									"        pm.collectionVariables.set('location', responseJson.location);",
+									"        console.log('Authentication successful');",
+									"    } else if (responseJson.notificationUrl) {",
+									"        console.log('Two factor authentication required: ' + responseJson.notificationUrl);",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "{{account_base_url}}/pass/serviceLoginAuth2?sid=xiaomiio&hash={{password_hash}}&callback=https://sts.api.io.mi.com/sts&qs=%3Fsid%3Dxiaomiio%26_json%3Dtrue&user={{username}}&_sign={{_sign}}&_json=true",
+							"host": [
+								"{{account_base_url}}"
+							],
+							"path": [
+								"pass",
+								"serviceLoginAuth2"
+							],
+							"query": [
+								{
+									"key": "sid",
+									"value": "xiaomiio"
+								},
+								{
+									"key": "hash",
+									"value": "{{password_hash}}"
+								},
+								{
+									"key": "callback",
+									"value": "https://sts.api.io.mi.com/sts"
+								},
+								{
+									"key": "qs",
+									"value": "%3Fsid%3Dxiaomiio%26_json%3Dtrue"
+								},
+								{
+									"key": "user",
+									"value": "{{username}}"
+								},
+								{
+									"key": "_sign",
+									"value": "{{_sign}}"
+								},
+								{
+									"key": "_json",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Step 3 - Get Service Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    const serviceToken = pm.cookies.get('serviceToken');",
+									"    if (serviceToken) {",
+									"        pm.collectionVariables.set('serviceToken', serviceToken);",
+									"        console.log('Service token extracted: ' + serviceToken);",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "{{location}}",
+							"host": [
+								"{{location}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Calls",
+			"item": [
+				{
+					"name": "Get Homes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Encoding",
+								"value": "identity"
+							},
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "x-xiaomi-protocal-flag-cli",
+								"value": "PROTOCAL-HTTP2"
+							},
+							{
+								"key": "MIOT-ENCRYPT-ALGORITHM",
+								"value": "ENCRYPT-RC4"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_country}}/app/v2/homeroom/gethome",
+							"host": [
+								"{{base_url_country}}"
+							],
+							"path": [
+								"app",
+								"v2",
+								"homeroom",
+								"gethome"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "{\"fg\": true, \"fetch_share\": true, \"fetch_share_dev\": true, \"limit\": 300, \"app_ver\": 7}",
+									"description": "Encrypted data parameter"
+								}
+							]
+						},
+						"description": "Note: This request requires RC4 encryption which needs to be implemented in pre-request script"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Devices",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Encoding",
+								"value": "identity"
+							},
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "x-xiaomi-protocal-flag-cli",
+								"value": "PROTOCAL-HTTP2"
+							},
+							{
+								"key": "MIOT-ENCRYPT-ALGORITHM",
+								"value": "ENCRYPT-RC4"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_country}}/app/v2/home/home_device_list",
+							"host": [
+								"{{base_url_country}}"
+							],
+							"path": [
+								"app",
+								"v2",
+								"home",
+								"home_device_list"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "{\"home_owner\": {{home_owner}}, \"home_id\": {{home_id}}, \"limit\": 200, \"get_split_device\": true, \"support_smart_home\": true}",
+									"description": "Encrypted data parameter"
+								}
+							]
+						},
+						"description": "Note: This request requires RC4 encryption which needs to be implemented in pre-request script"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Device Count",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Encoding",
+								"value": "identity"
+							},
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "x-xiaomi-protocal-flag-cli",
+								"value": "PROTOCAL-HTTP2"
+							},
+							{
+								"key": "MIOT-ENCRYPT-ALGORITHM",
+								"value": "ENCRYPT-RC4"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_country}}/app/v2/user/get_device_cnt",
+							"host": [
+								"{{base_url_country}}"
+							],
+							"path": [
+								"app",
+								"v2",
+								"user",
+								"get_device_cnt"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "{\"fetch_own\": true, \"fetch_share\": true}",
+									"description": "Encrypted data parameter"
+								}
+							]
+						},
+						"description": "Note: This request requires RC4 encryption which needs to be implemented in pre-request script"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Beacon Key",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Encoding",
+								"value": "identity"
+							},
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "x-xiaomi-protocal-flag-cli",
+								"value": "PROTOCAL-HTTP2"
+							},
+							{
+								"key": "MIOT-ENCRYPT-ALGORITHM",
+								"value": "ENCRYPT-RC4"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_country}}/app/v2/device/blt_get_beaconkey",
+							"host": [
+								"{{base_url_country}}"
+							],
+							"path": [
+								"app",
+								"v2",
+								"device",
+								"blt_get_beaconkey"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "{\"did\":\"{{device_did}}\",\"pdid\":1}",
+									"description": "Encrypted data parameter"
+								}
+							]
+						},
+						"description": "Note: This request requires RC4 encryption which needs to be implemented in pre-request script"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Set cookies for API requests",
+					"if (pm.collectionVariables.get('serviceToken')) {",
+					"    pm.request.addHeader({",
+					"        key: 'Cookie',",
+					"        value: `userId=${pm.collectionVariables.get('userId')}; yetAnotherServiceToken=${pm.collectionVariables.get('serviceToken')}; serviceToken=${pm.collectionVariables.get('serviceToken')}; locale=en_GB; timezone=GMT+02:00; is_daylight=1; dst_offset=3600000; channel=MI_APP_STORE; sdkVersion=accountsdk-18.8.15; deviceId=${pm.collectionVariables.get('device_id')}`",
+					"    });",
+					"}"
+				]
+			}
+		}
+	]
+}

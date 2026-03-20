@@ -1,0 +1,324 @@
+{
+  "info": {
+    "_postman_id": "bcc91505-28c0-492c-99a3-fa4d3705d6d5",
+    "name": "Auth Examples",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1487263"
+  },
+  "item": [
+    {
+      "name": "Get Reports",
+      "request": {
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "scope",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "state",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "tokenName",
+              "value": "{{authTokan}}",
+              "type": "string"
+            },
+            {
+              "key": "grant_type",
+              "value": "authorization_code",
+              "type": "string"
+            },
+            {
+              "key": "useBrowser",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "tokenType",
+              "value": "Bearer",
+              "type": "string"
+            },
+            {
+              "key": "clientId",
+              "value": "{{clientid}}",
+              "type": "string"
+            },
+            {
+              "key": "authUrl",
+              "value": "{{authurl}}",
+              "type": "string"
+            },
+            {
+              "key": "redirect_uri",
+              "value": "{{callback}}",
+              "type": "string"
+            },
+            {
+              "key": "client_authentication",
+              "value": "body",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "accessTokenUrl",
+              "value": "{{access_url}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "{{username}}",
+              "type": "string"
+            },
+            {
+              "key": "clientSecret",
+              "value": "{{client_secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "https://api.powerbi.com/v1.0/myorg/admin/reports",
+          "protocol": "https",
+          "host": [
+            "api",
+            "powerbi",
+            "com"
+          ],
+          "path": [
+            "v1.0",
+            "myorg",
+            "admin",
+            "reports"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Capacities",
+      "request": {
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "scope",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "tokenName",
+              "value": "{{authTokan}}",
+              "type": "string"
+            },
+            {
+              "key": "grant_type",
+              "value": "authorization_code",
+              "type": "string"
+            },
+            {
+              "key": "useBrowser",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "tokenType",
+              "value": "Bearer",
+              "type": "string"
+            },
+            {
+              "key": "clientId",
+              "value": "{{clientid}}",
+              "type": "string"
+            },
+            {
+              "key": "authUrl",
+              "value": "{{authurl}}",
+              "type": "string"
+            },
+            {
+              "key": "redirect_uri",
+              "value": "{{callback}}",
+              "type": "string"
+            },
+            {
+              "key": "client_authentication",
+              "value": "body",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "accessTokenUrl",
+              "value": "{{access_url}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "{{username}}",
+              "type": "string"
+            },
+            {
+              "key": "clientSecret",
+              "value": "{{client_secret}}",
+              "type": "string"
+            },
+            {
+              "key": "state",
+              "value": "{{state}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.powerbi.com/v1.0/myorg/capacities",
+          "protocol": "https",
+          "host": [
+            "api",
+            "powerbi",
+            "com"
+          ],
+          "path": [
+            "v1.0",
+            "myorg",
+            "capacities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Features",
+      "request": {
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "useBrowser",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "key": "scope",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "tokenName",
+              "value": "{{authTokan}}",
+              "type": "string"
+            },
+            {
+              "key": "grant_type",
+              "value": "authorization_code",
+              "type": "string"
+            },
+            {
+              "key": "tokenType",
+              "value": "Bearer",
+              "type": "string"
+            },
+            {
+              "key": "clientId",
+              "value": "{{clientid}}",
+              "type": "string"
+            },
+            {
+              "key": "authUrl",
+              "value": "{{authurl}}",
+              "type": "string"
+            },
+            {
+              "key": "redirect_uri",
+              "value": "{{callback}}",
+              "type": "string"
+            },
+            {
+              "key": "client_authentication",
+              "value": "body",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "accessTokenUrl",
+              "value": "{{access_url}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "{{username}}",
+              "type": "string"
+            },
+            {
+              "key": "clientSecret",
+              "value": "{{client_secret}}",
+              "type": "string"
+            },
+            {
+              "key": "state",
+              "value": "{{state}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.powerbi.com/v1.0/myorg/availableFeatures",
+          "protocol": "https",
+          "host": [
+            "api",
+            "powerbi",
+            "com"
+          ],
+          "path": [
+            "v1.0",
+            "myorg",
+            "availableFeatures"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

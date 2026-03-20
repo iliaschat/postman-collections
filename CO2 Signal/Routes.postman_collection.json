@@ -1,0 +1,738 @@
+{
+  "info": {
+    "_postman_id": "1c3950ab-fc03-42aa-990b-e2869d1fc07a",
+    "name": "Routes",
+    "description": "StartFragment\n\nCO2 Signal uses API keys to allow access to the API. You can get an API key [here](http://www.co2signal.com/).\n\nCO2 Signal expects the API key to be included as a header in all requests to the server:\n\n`auth-token: myapitoken`\n\nEndFragment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1487263"
+  },
+  "item": [
+    {
+      "name": "Get latest by country code",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.co2signal.com/v1/latest?countryCode={{CountryCode}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "co2signal",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "latest"
+          ],
+          "query": [
+            {
+              "key": "countryCode",
+              "value": "{{CountryCode}}",
+              "description": "two-letter iso country code"
+            }
+          ]
+        },
+        "description": "StartFragment\n\nThis endpoint retrieves the last known state of a country. It is also possible to get data for a specific zone, in case the country is divided by zones seen on app.electricitymap.org.\n\nSee [http://api.electricitymap.org/v3/zones](http://api.electricitymap.org/v3/zones) for list of available zones.\n\nEndFragme"
+      },
+      "response": [
+        {
+          "name": "401-Get latest by country code",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.co2signal.com/v1/latest?countryCode=NL",
+              "protocol": "https",
+              "host": [
+                "api",
+                "co2signal",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "latest"
+              ],
+              "query": [
+                {
+                  "key": "countryCode",
+                  "value": "NL",
+                  "description": "two-letter iso country code"
+                }
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 04 Jul 2022 11:24:27 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "45"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "WWW-Authenticate",
+              "value": "Key realm=\"kong\""
+            },
+            {
+              "key": "X-Kong-Response-Latency",
+              "value": "0"
+            },
+            {
+              "key": "CF-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Expect-CT",
+              "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=NnLbgmonvcct6jSpX%2BkgCQUlAIab%2FbqGGHNYxEjAyXLERP0DfP2oH03ZIIZnA%2F16zWID4kt2AchjWhVs90LOdfFqmo4L063K7v5XiptVGQTVSDbbpBhTrZ2zyLl3r4ZWOBQeDQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "NEL",
+              "value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "72577e9fdbffb936-AMS"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"No API key found in request\"\n}"
+        },
+        {
+          "name": "401-Get latest by country code",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.co2signal.com/v1/latest?countryCode=NL",
+              "protocol": "https",
+              "host": [
+                "api",
+                "co2signal",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "latest"
+              ],
+              "query": [
+                {
+                  "key": "countryCode",
+                  "value": "NL",
+                  "description": "two-letter iso country code"
+                }
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 04 Jul 2022 11:20:56 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "52"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "X-Kong-Response-Latency",
+              "value": "0"
+            },
+            {
+              "key": "CF-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Expect-CT",
+              "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=W6M0HD%2FIm4xL1FCBrA7QSak7CgHOTAQY5LEzBO4UGnBlqEaBa5XMsRisBTbBzOQyzOFHAhdG5Ou82NWj6XhVAxOLOGdJYfPnGWoMGMH01KzEWODnYdO0%2Bn8D9JlDiJYfCV3paw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "NEL",
+              "value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "7257797b0fc5b936-AMS"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Invalid authentication credentials\"\n}"
+        },
+        {
+          "name": "200-Get latest by country code",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.co2signal.com/v1/latest?countryCode=NL",
+              "protocol": "https",
+              "host": [
+                "api",
+                "co2signal",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "latest"
+              ],
+              "query": [
+                {
+                  "key": "countryCode",
+                  "value": "NL",
+                  "description": "two-letter iso country code"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 04 Jul 2022 11:19:05 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "RateLimit-Reset",
+              "value": "1"
+            },
+            {
+              "key": "RateLimit-Remaining",
+              "value": "0"
+            },
+            {
+              "key": "X-RateLimit-Remaining-Second",
+              "value": "0"
+            },
+            {
+              "key": "X-RateLimit-Limit-Second",
+              "value": "1"
+            },
+            {
+              "key": "X-RateLimit-Remaining-Hour",
+              "value": "25"
+            },
+            {
+              "key": "X-RateLimit-Limit-Hour",
+              "value": "30"
+            },
+            {
+              "key": "RateLimit-Limit",
+              "value": "1"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "Origin, X-Requested-With, Content-Type, Accept, electricitymap-token"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "X-Kong-Upstream-Latency",
+              "value": "22"
+            },
+            {
+              "key": "X-Kong-Proxy-Latency",
+              "value": "5"
+            },
+            {
+              "key": "Via",
+              "value": "kong/2.5.0"
+            },
+            {
+              "key": "CF-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Expect-CT",
+              "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=oby85sAorOMpW9HfsV0tOIgj6Fnt0GCiMWX0xsmKnOKuSFlLXy%2FdCw73ts5BwWAWVRwKji2be%2BAe9%2BvsbshEeqKSFANjdlzg3E%2BfSPRgx%2BU9ZDbwOtmkL7hMaqDG%2BFt%2B%2Bl7qZQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "NEL",
+              "value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "725776c01ffcb936-AMS"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"_disclaimer\": \"This data is the exclusive property of electricityMap and/or related parties. If you're in doubt about your rights to use this data, please contact api@co2signal.com\",\n    \"status\": \"ok\",\n    \"countryCode\": \"NL\",\n    \"data\": {\n        \"datetime\": \"2022-07-04T09:00:00.000Z\",\n        \"carbonIntensity\": 248,\n        \"fossilFuelPercentage\": 42.41\n    },\n    \"units\": {\n        \"carbonIntensity\": \"gCO2eq/kWh\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get latest by geographic coordinate",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.co2signal.com/v1/latest?lon={{longitude}}&lat={{latitude}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "co2signal",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "latest"
+          ],
+          "query": [
+            {
+              "key": "lon",
+              "value": "{{longitude}}",
+              "description": "longitude"
+            },
+            {
+              "key": "lat",
+              "value": "{{latitude}}",
+              "description": "latitude"
+            }
+          ]
+        },
+        "description": "This endpoint retrieves the last known state of the zone. Currently we default to zones by country, but this will quickly evolve to be as granular as possible."
+      },
+      "response": [
+        {
+          "name": "401-Get latest by geographic coordinate",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.co2signal.com/v1/latest?lon=4.854332241229714&lat=52.34362578324651",
+              "protocol": "https",
+              "host": [
+                "api",
+                "co2signal",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "latest"
+              ],
+              "query": [
+                {
+                  "key": "lon",
+                  "value": "4.854332241229714",
+                  "description": "longitude"
+                },
+                {
+                  "key": "lat",
+                  "value": "52.34362578324651",
+                  "description": "latitude"
+                }
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 04 Jul 2022 11:24:57 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "45"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "WWW-Authenticate",
+              "value": "Key realm=\"kong\""
+            },
+            {
+              "key": "X-Kong-Response-Latency",
+              "value": "0"
+            },
+            {
+              "key": "CF-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Expect-CT",
+              "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=5jX9g1P1gBrEOQ%2BjtjnyuFcyMGfwErkLiQ2PtyckO2uQjW5gWY6S4zk1JRDvzGThuCQBJjmHvh8D3Zv3tYvjgQw0l4aNDLdIjx0OU4rNG45Vuf9e7ZyV4k0UH1u8voVeTzzmGw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "NEL",
+              "value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "72577f5d380eb936-AMS"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"No API key found in request\"\n}"
+        },
+        {
+          "name": "401-Get latest by geographic coordinate",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.co2signal.com/v1/latest?lon=4.854332241229714&lat=52.34362578324651",
+              "protocol": "https",
+              "host": [
+                "api",
+                "co2signal",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "latest"
+              ],
+              "query": [
+                {
+                  "key": "lon",
+                  "value": "4.854332241229714",
+                  "description": "longitude"
+                },
+                {
+                  "key": "lat",
+                  "value": "52.34362578324651",
+                  "description": "latitude"
+                }
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 04 Jul 2022 11:20:43 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "52"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "X-Kong-Response-Latency",
+              "value": "1"
+            },
+            {
+              "key": "CF-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Expect-CT",
+              "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=zO178niWeLpVhhwHpv5jsyJZJSE18L53n26l3OzwSmeiDZMAM5zXKSq5iIqa48he706scybc4t%2BTpWaHAKdpAft76XpW2NB4Ilp7xYhqjDGwghBU%2B6w6YIx2eNlYTKrVSQEAKw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "NEL",
+              "value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "725779275eadb936-AMS"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Invalid authentication credentials\"\n}"
+        },
+        {
+          "name": "200-Get latest by geographic coordinate",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.co2signal.com/v1/latest?lon=4.854332241229714&lat=52.34362578324651",
+              "protocol": "https",
+              "host": [
+                "api",
+                "co2signal",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "latest"
+              ],
+              "query": [
+                {
+                  "key": "lon",
+                  "value": "4.854332241229714",
+                  "description": "longitude"
+                },
+                {
+                  "key": "lat",
+                  "value": "52.34362578324651",
+                  "description": "latitude"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 04 Jul 2022 11:20:13 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "RateLimit-Reset",
+              "value": "1"
+            },
+            {
+              "key": "RateLimit-Remaining",
+              "value": "0"
+            },
+            {
+              "key": "X-RateLimit-Remaining-Second",
+              "value": "0"
+            },
+            {
+              "key": "X-RateLimit-Limit-Second",
+              "value": "1"
+            },
+            {
+              "key": "X-RateLimit-Remaining-Hour",
+              "value": "24"
+            },
+            {
+              "key": "X-RateLimit-Limit-Hour",
+              "value": "30"
+            },
+            {
+              "key": "RateLimit-Limit",
+              "value": "1"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "Origin, X-Requested-With, Content-Type, Accept, electricitymap-token"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "X-Kong-Upstream-Latency",
+              "value": "19"
+            },
+            {
+              "key": "X-Kong-Proxy-Latency",
+              "value": "5"
+            },
+            {
+              "key": "Via",
+              "value": "kong/2.5.0"
+            },
+            {
+              "key": "CF-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Expect-CT",
+              "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=mjFAeU7802RuDA%2FRPtK0BHXWt%2BP8c0bGWco1qqaC7jKchkEPzgGliRjvnSogS2zdetxtRYX2idhZcByIPLZF3HCsoKg%2Fc5UuQp1x0WUeMIZYksggi%2Fe%2F%2BHpqSuscokEV7dV%2FZw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "NEL",
+              "value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "7257786d6f0eb936-AMS"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"_disclaimer\": \"This data is the exclusive property of electricityMap and/or related parties. If you're in doubt about your rights to use this data, please contact api@co2signal.com\",\n    \"status\": \"ok\",\n    \"countryCode\": \"NL\",\n    \"data\": {\n        \"datetime\": \"2022-07-04T09:00:00.000Z\",\n        \"carbonIntensity\": 248,\n        \"fossilFuelPercentage\": 42.41\n    },\n    \"units\": {\n        \"carbonIntensity\": \"gCO2eq/kWh\"\n    }\n}"
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{auth-token}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "auth-token",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

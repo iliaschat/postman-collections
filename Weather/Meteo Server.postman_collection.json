@@ -1,0 +1,1772 @@
+{
+  "info": {
+    "_postman_id": "11478fc8-aecc-4253-b50a-abace5249d81",
+    "name": "Meteo Server",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1487263"
+  },
+  "item": [
+    {
+      "name": "Current Meteo data - NL",
+      "item": [
+        {
+          "name": "current by GPS coordinates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{METEOSERVER-URL}}/liveweer_synop.php?lat={{latitude}}&long={{longitude}}&key={{METEOSERVER-APIKEY}}&select=1",
+              "host": [
+                "{{METEOSERVER-URL}}"
+              ],
+              "path": [
+                "liveweer_synop.php"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "{{latitude}}"
+                },
+                {
+                  "key": "long",
+                  "value": "{{longitude}}"
+                },
+                {
+                  "key": "key",
+                  "value": "{{METEOSERVER-APIKEY}}"
+                },
+                {
+                  "key": "select",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "current by GPS coordinates",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/liveweer_synop.php?lat=52.1052957&long=5.1706729&key={{METEOSERVER-APIKEY}}&select=1",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "liveweer_synop.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "52.1052957"
+                    },
+                    {
+                      "key": "long",
+                      "value": "5.1706729"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    },
+                    {
+                      "key": "select",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.20.1"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 12:38:56 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.2.34"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"liveweer\": [\n        {\n            \"plaats\": \"Groenekan\",\n            \"station\": \"DE BILT AWS\",\n            \"timestamp\": \"1677674285\",\n            \"time\": \"01-03-2023 13:38:05\",\n            \"temp\": \"6.9\",\n            \"gtemp\": \"3.9\",\n            \"samenv\": \"Motregen of motsneeuw\",\n            \"image\": \"regen\",\n            \"windrgr\": \"56.4\",\n            \"windr\": \"ONO\",\n            \"windms\": \"4.55\",\n            \"windbft\": \"3\",\n            \"windknp\": \"8.8\",\n            \"windkmh\": \"16.4\",\n            \"windstootms\": \"8.14\",\n            \"windstootbft\": \"5\",\n            \"windstootknp\": \"15.8\",\n            \"windstootkmh\": \"29.3\",\n            \"luchttemp\": \"6.9\",\n            \"lv\": \"43\",\n            \"luchtd\": \"1027.85\",\n            \"ldmmhg\": \"771\",\n            \"zicht\": \"33600\",\n            \"regenduurh\": \"0\",\n            \"regenduurh10m\": \"0\",\n            \"wolkenbasis\": \"2694.92\",\n            \"wolkenbasisl1\": \"2694.92\",\n            \"wolkenbasisl2\": \"3054.92\",\n            \"wolkenbasisl3\": \"0\",\n            \"totalebedekking\": \"100\",\n            \"bedekkingl1\": \"87.5\",\n            \"bedekkingl2\": \"100\",\n            \"bedekkingl3\": \"0\",\n            \"neerslagints\": \"0\",\n            \"neerslagints10som\": \"0\",\n            \"gr\": \"526\",\n            \"regen_12\": \"0\",\n            \"regen_1\": \"0\",\n            \"regen_24\": \"0\",\n            \"regen_6\": \"0\",\n            \"zonduur\": \"10\",\n            \"dauwp\": \"-4.7\",\n            \"grstemp\": \"8.4\",\n            \"grstemp_12\": \"-8.2\",\n            \"grstemp_14\": \"-8.2\",\n            \"grstemp_6\": \"-8.2\",\n            \"temp_min\": \"6.6\",\n            \"temp_min_12\": \"-5.8\",\n            \"temp_min_14\": \"-5.8\",\n            \"temp_min_6\": \"-5.7\",\n            \"temp_12\": \"6.9\",\n            \"temp_24\": \"6.9\",\n            \"temp_6\": \"6.9\",\n            \"weercode\": \"2\",\n            \"weercode_10\": \"2\",\n            \"aantal_bliksem\": \"_\",\n            \"aantal_bliksem_nabij\": \"_\",\n            \"verw\": \"Zonnig en droog, in het noordwesten ook bewolking\",\n            \"sup\": \"07:23\",\n            \"sunder\": \"18:19\",\n            \"d0weer\": \"zonnig\",\n            \"d0tmax\": \"8\",\n            \"d0tmin\": \"-1\",\n            \"d0windk\": \"3\",\n            \"d0windknp\": \"8\",\n            \"d0windms\": \"4\",\n            \"d0windkmh\": \"15\",\n            \"d0windr\": \"ONO\",\n            \"d0windrgr\": \"67\",\n            \"d0neerslag\": \"0\",\n            \"d0zon\": \"100\",\n            \"d1weer\": \"halfbewolkt\",\n            \"d1tmax\": \"7\",\n            \"d1tmin\": \"-2\",\n            \"d1windk\": \"2\",\n            \"d1windknp\": \"6\",\n            \"d1windms\": \"3\",\n            \"d1windkmh\": \"11\",\n            \"d1windr\": \"NO\",\n            \"d1windrgr\": \"44\",\n            \"d1neerslag\": \"10\",\n            \"d1zon\": \"40\",\n            \"d2weer\": \"bewolkt\",\n            \"d2tmax\": \"9\",\n            \"d2tmin\": \"-1\",\n            \"d2windk\": \"2\",\n            \"d2windknp\": \"6\",\n            \"d2windms\": \"3\",\n            \"d2windkmh\": \"11\",\n            \"d2windr\": \"N\",\n            \"d2windrgr\": \"0\",\n            \"d2neerslag\": \"10\",\n            \"d2zon\": \"20\",\n            \"lkop\": \"Er zijn geen waarschuwingen\",\n            \"ltekst\": \" Er zijn momenteel geen waarschuwingen van kracht. \",\n            \"alarm\": \"0\",\n            \"ltalarmtype\": \"LT000\",\n            \"ltalarmcode\": \"GREEN\",\n            \"ltalarmkop\": \"Geen waarschuwing\",\n            \"ltalarmtekst\": \"-\",\n            \"lttijd\": \"01/03/2023 13:00\",\n            \"fxalarmtype\": \"FX000\",\n            \"fxalarmcode\": \"GREEN\",\n            \"fxalarmkop\": \"Geen waarschuwing\",\n            \"fxalarmtekst\": \"-\",\n            \"fxtijd\": \"01/03/2023 13:00\",\n            \"icalarmtype\": \"IC000\",\n            \"icalarmcode\": \"GREEN\",\n            \"icalarmkop\": \"Geen waarschuwing\",\n            \"icalarmtekst\": \"-\",\n            \"ictijd\": \"01/03/2023 13:00\",\n            \"rralarmtype\": \"RR000\",\n            \"rralarmcode\": \"GREEN\",\n            \"rralarmkop\": \"Geen waarschuwing\",\n            \"rralarmtekst\": \"-\",\n            \"rrtijd\": \"01/03/2023 13:00\",\n            \"vvalarmtype\": \"VV000\",\n            \"vvalarmcode\": \"GREEN\",\n            \"vvalarmkop\": \"Geen waarschuwing\",\n            \"vvalarmtekst\": \"-\",\n            \"vvtijd\": \"01/03/2023 13:00\",\n            \"txalarmtype\": \"TX000\",\n            \"txalarmcode\": \"GREEN\",\n            \"txalarmkop\": \"Geen waarschuwing\",\n            \"txalarmtekst\": \"-\",\n            \"txtijd\": \"01/03/2023 13:00\",\n            \"wsalarmtype\": \"WS000\",\n            \"wsalarmcode\": \"GREEN\",\n            \"wsalarmkop\": \"Geen waarschuwing\",\n            \"wsalarmtekst\": \"-\",\n            \"wstijd\": \"01/03/2023 13:00\",\n            \"eerste_wsch_type\": \"-\",\n            \"eerste_wsch_code\": \"-\",\n            \"eerste_wsch_tijd\": \"-\",\n            \"eerste_wsch_kop\": \"-\",\n            \"eerste_wsch_tekst\": \"-\",\n            \"alarmbijgewerkt\": \"01/03/2023 11:28\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "current by city name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{METEOSERVER-URL}}/liveweer_synop.php?locatie={{city name}}&key={{METEOSERVER-APIKEY}}",
+              "host": [
+                "{{METEOSERVER-URL}}"
+              ],
+              "path": [
+                "liveweer_synop.php"
+              ],
+              "query": [
+                {
+                  "key": "locatie",
+                  "value": "{{city name}}"
+                },
+                {
+                  "key": "key",
+                  "value": "{{METEOSERVER-APIKEY}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "current by city name",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/liveweer_synop.php?locatie=Amsterdam&dag=20230301&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "liveweer_synop.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "locatie",
+                      "value": "Amsterdam"
+                    },
+                    {
+                      "key": "dag",
+                      "value": "20230301"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.12.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 12:39:45 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.3.29"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"liveweer\": [\n        {\n            \"plaats\": \"Amsterdam\",\n            \"station\": \"AMSTERDAM/SCHIPHOL AP\",\n            \"timestamp\": \"1677674285\",\n            \"time\": \"01-03-2023 13:38:05\",\n            \"temp\": \"6.1\",\n            \"gtemp\": \"2.2\",\n            \"samenv\": \"Motregen of motsneeuw\",\n            \"image\": \"regen\",\n            \"windrgr\": \"51.6\",\n            \"windr\": \"ONO\",\n            \"windms\": \"6.27\",\n            \"windbft\": \"4\",\n            \"windknp\": \"12.2\",\n            \"windkmh\": \"22.6\",\n            \"windstootms\": \"8.58\",\n            \"windstootbft\": \"5\",\n            \"windstootknp\": \"16.7\",\n            \"windstootkmh\": \"30.9\",\n            \"luchttemp\": \"6.3\",\n            \"lv\": \"57\",\n            \"luchtd\": \"1028.19\",\n            \"ldmmhg\": \"771\",\n            \"zicht\": \"32700\",\n            \"regenduurh\": \"0\",\n            \"regenduurh10m\": \"0\",\n            \"wolkenbasis\": \"2694.92\",\n            \"wolkenbasisl1\": \"2694.92\",\n            \"wolkenbasisl2\": \"3054.92\",\n            \"wolkenbasisl3\": \"0\",\n            \"totalebedekking\": \"100\",\n            \"bedekkingl1\": \"87.5\",\n            \"bedekkingl2\": \"100\",\n            \"bedekkingl3\": \"0\",\n            \"neerslagints\": \"0\",\n            \"neerslagints10som\": \"0\",\n            \"gr\": \"526\",\n            \"regen_12\": \"0.01\",\n            \"regen_1\": \"0\",\n            \"regen_24\": \"0.01\",\n            \"regen_6\": \"0.01\",\n            \"zonduur\": \"10\",\n            \"dauwp\": \"-1.4\",\n            \"grstemp\": \"8.1\",\n            \"grstemp_12\": \"-5.3\",\n            \"grstemp_14\": \"-5.3\",\n            \"grstemp_6\": \"-5.3\",\n            \"temp_min\": \"_\",\n            \"temp_min_12\": \"-4.1\",\n            \"temp_min_14\": \"_\",\n            \"temp_min_6\": \"_\",\n            \"temp_12\": \"6.5\",\n            \"temp_24\": \"_\",\n            \"temp_6\": \"_\",\n            \"weercode\": \"2\",\n            \"weercode_10\": \"2\",\n            \"aantal_bliksem\": \"_\",\n            \"aantal_bliksem_nabij\": \"_\",\n            \"verw\": \"Zonnig en droog, in het noordwesten ook bewolking\",\n            \"sup\": \"07:25\",\n            \"sunder\": \"18:20\",\n            \"d0weer\": \"zonnig\",\n            \"d0tmax\": \"8\",\n            \"d0tmin\": \"0\",\n            \"d0windk\": \"2\",\n            \"d0windknp\": \"6\",\n            \"d0windms\": \"3\",\n            \"d0windkmh\": \"11\",\n            \"d0windr\": \"ONO\",\n            \"d0windrgr\": \"67\",\n            \"d0neerslag\": \"0\",\n            \"d0zon\": \"98\",\n            \"d1weer\": \"halfbewolkt\",\n            \"d1tmax\": \"7\",\n            \"d1tmin\": \"-2\",\n            \"d1windk\": \"2\",\n            \"d1windknp\": \"6\",\n            \"d1windms\": \"3\",\n            \"d1windkmh\": \"11\",\n            \"d1windr\": \"NO\",\n            \"d1windrgr\": \"44\",\n            \"d1neerslag\": \"10\",\n            \"d1zon\": \"40\",\n            \"d2weer\": \"bewolkt\",\n            \"d2tmax\": \"9\",\n            \"d2tmin\": \"-1\",\n            \"d2windk\": \"2\",\n            \"d2windknp\": \"6\",\n            \"d2windms\": \"3\",\n            \"d2windkmh\": \"11\",\n            \"d2windr\": \"N\",\n            \"d2windrgr\": \"0\",\n            \"d2neerslag\": \"10\",\n            \"d2zon\": \"20\",\n            \"lkop\": \"Er zijn geen waarschuwingen\",\n            \"ltekst\": \" Er zijn momenteel geen waarschuwingen van kracht. \",\n            \"alarm\": \"0\",\n            \"ltalarmtype\": \"LT000\",\n            \"ltalarmcode\": \"GREEN\",\n            \"ltalarmkop\": \"Geen waarschuwing\",\n            \"ltalarmtekst\": \"-\",\n            \"lttijd\": \"01/03/2023 13:00\",\n            \"fxalarmtype\": \"FX000\",\n            \"fxalarmcode\": \"GREEN\",\n            \"fxalarmkop\": \"Geen waarschuwing\",\n            \"fxalarmtekst\": \"-\",\n            \"fxtijd\": \"01/03/2023 13:00\",\n            \"icalarmtype\": \"IC000\",\n            \"icalarmcode\": \"GREEN\",\n            \"icalarmkop\": \"Geen waarschuwing\",\n            \"icalarmtekst\": \"-\",\n            \"ictijd\": \"01/03/2023 13:00\",\n            \"rralarmtype\": \"RR000\",\n            \"rralarmcode\": \"GREEN\",\n            \"rralarmkop\": \"Geen waarschuwing\",\n            \"rralarmtekst\": \"-\",\n            \"rrtijd\": \"01/03/2023 13:00\",\n            \"vvalarmtype\": \"VV000\",\n            \"vvalarmcode\": \"GREEN\",\n            \"vvalarmkop\": \"Geen waarschuwing\",\n            \"vvalarmtekst\": \"-\",\n            \"vvtijd\": \"01/03/2023 13:00\",\n            \"txalarmtype\": \"TX000\",\n            \"txalarmcode\": \"GREEN\",\n            \"txalarmkop\": \"Geen waarschuwing\",\n            \"txalarmtekst\": \"-\",\n            \"txtijd\": \"01/03/2023 13:00\",\n            \"wsalarmtype\": \"WS000\",\n            \"wsalarmcode\": \"GREEN\",\n            \"wsalarmkop\": \"Geen waarschuwing\",\n            \"wsalarmtekst\": \"-\",\n            \"wstijd\": \"01/03/2023 13:00\",\n            \"eerste_wsch_type\": \"-\",\n            \"eerste_wsch_code\": \"-\",\n            \"eerste_wsch_tijd\": \"-\",\n            \"eerste_wsch_kop\": \"-\",\n            \"eerste_wsch_tekst\": \"-\",\n            \"alarmbijgewerkt\": \"01/03/2023 11:28\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "current by post code",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{METEOSERVER-URL}}/liveweer_synop.php?pc={{postcode}}&dag=20230920&key={{METEOSERVER-APIKEY}}",
+              "host": [
+                "{{METEOSERVER-URL}}"
+              ],
+              "path": [
+                "liveweer_synop.php"
+              ],
+              "query": [
+                {
+                  "key": "pc",
+                  "value": "{{postcode}}"
+                },
+                {
+                  "key": "dag",
+                  "value": "20230920"
+                },
+                {
+                  "key": "key",
+                  "value": "{{METEOSERVER-APIKEY}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "current by post code",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/liveweer_synop.php?pc=1111AA&dag=20230301&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "liveweer_synop.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "1111AA"
+                    },
+                    {
+                      "key": "dag",
+                      "value": "20230301"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.12.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 12:40:15 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.3.29"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"liveweer\": [\n        {\n            \"plaats\": \"Duivendrecht\",\n            \"station\": \"AMSTERDAM/SCHIPHOL AP\",\n            \"timestamp\": \"1677674285\",\n            \"time\": \"01-03-2023 13:38:05\",\n            \"temp\": \"6.1\",\n            \"gtemp\": \"2.2\",\n            \"samenv\": \"Motregen of motsneeuw\",\n            \"image\": \"regen\",\n            \"windrgr\": \"51.6\",\n            \"windr\": \"ONO\",\n            \"windms\": \"6.27\",\n            \"windbft\": \"4\",\n            \"windknp\": \"12.2\",\n            \"windkmh\": \"22.6\",\n            \"windstootms\": \"8.58\",\n            \"windstootbft\": \"5\",\n            \"windstootknp\": \"16.7\",\n            \"windstootkmh\": \"30.9\",\n            \"luchttemp\": \"6.3\",\n            \"lv\": \"57\",\n            \"luchtd\": \"1028.19\",\n            \"ldmmhg\": \"771\",\n            \"zicht\": \"32700\",\n            \"regenduurh\": \"0\",\n            \"regenduurh10m\": \"0\",\n            \"wolkenbasis\": \"2694.92\",\n            \"wolkenbasisl1\": \"2694.92\",\n            \"wolkenbasisl2\": \"3054.92\",\n            \"wolkenbasisl3\": \"0\",\n            \"totalebedekking\": \"100\",\n            \"bedekkingl1\": \"87.5\",\n            \"bedekkingl2\": \"100\",\n            \"bedekkingl3\": \"0\",\n            \"neerslagints\": \"0\",\n            \"neerslagints10som\": \"0\",\n            \"gr\": \"526\",\n            \"regen_12\": \"0.01\",\n            \"regen_1\": \"0\",\n            \"regen_24\": \"0.01\",\n            \"regen_6\": \"0.01\",\n            \"zonduur\": \"10\",\n            \"dauwp\": \"-1.4\",\n            \"grstemp\": \"8.1\",\n            \"grstemp_12\": \"-5.3\",\n            \"grstemp_14\": \"-5.3\",\n            \"grstemp_6\": \"-5.3\",\n            \"temp_min\": \"_\",\n            \"temp_min_12\": \"-4.1\",\n            \"temp_min_14\": \"_\",\n            \"temp_min_6\": \"_\",\n            \"temp_12\": \"6.5\",\n            \"temp_24\": \"_\",\n            \"temp_6\": \"_\",\n            \"weercode\": \"2\",\n            \"weercode_10\": \"2\",\n            \"aantal_bliksem\": \"_\",\n            \"aantal_bliksem_nabij\": \"_\",\n            \"verw\": \"Zonnig en droog, in het noordwesten ook bewolking\",\n            \"sup\": \"07:25\",\n            \"sunder\": \"18:20\",\n            \"d0weer\": \"zonnig\",\n            \"d0tmax\": \"8\",\n            \"d0tmin\": \"0\",\n            \"d0windk\": \"2\",\n            \"d0windknp\": \"6\",\n            \"d0windms\": \"3\",\n            \"d0windkmh\": \"11\",\n            \"d0windr\": \"ONO\",\n            \"d0windrgr\": \"67\",\n            \"d0neerslag\": \"0\",\n            \"d0zon\": \"98\",\n            \"d1weer\": \"halfbewolkt\",\n            \"d1tmax\": \"7\",\n            \"d1tmin\": \"-2\",\n            \"d1windk\": \"2\",\n            \"d1windknp\": \"6\",\n            \"d1windms\": \"3\",\n            \"d1windkmh\": \"11\",\n            \"d1windr\": \"NO\",\n            \"d1windrgr\": \"44\",\n            \"d1neerslag\": \"10\",\n            \"d1zon\": \"40\",\n            \"d2weer\": \"bewolkt\",\n            \"d2tmax\": \"9\",\n            \"d2tmin\": \"-1\",\n            \"d2windk\": \"2\",\n            \"d2windknp\": \"6\",\n            \"d2windms\": \"3\",\n            \"d2windkmh\": \"11\",\n            \"d2windr\": \"N\",\n            \"d2windrgr\": \"0\",\n            \"d2neerslag\": \"10\",\n            \"d2zon\": \"20\",\n            \"lkop\": \"Er zijn geen waarschuwingen\",\n            \"ltekst\": \" Er zijn momenteel geen waarschuwingen van kracht. \",\n            \"alarm\": \"0\",\n            \"ltalarmtype\": \"LT000\",\n            \"ltalarmcode\": \"GREEN\",\n            \"ltalarmkop\": \"Geen waarschuwing\",\n            \"ltalarmtekst\": \"-\",\n            \"lttijd\": \"01/03/2023 13:00\",\n            \"fxalarmtype\": \"FX000\",\n            \"fxalarmcode\": \"GREEN\",\n            \"fxalarmkop\": \"Geen waarschuwing\",\n            \"fxalarmtekst\": \"-\",\n            \"fxtijd\": \"01/03/2023 13:00\",\n            \"icalarmtype\": \"IC000\",\n            \"icalarmcode\": \"GREEN\",\n            \"icalarmkop\": \"Geen waarschuwing\",\n            \"icalarmtekst\": \"-\",\n            \"ictijd\": \"01/03/2023 13:00\",\n            \"rralarmtype\": \"RR000\",\n            \"rralarmcode\": \"GREEN\",\n            \"rralarmkop\": \"Geen waarschuwing\",\n            \"rralarmtekst\": \"-\",\n            \"rrtijd\": \"01/03/2023 13:00\",\n            \"vvalarmtype\": \"VV000\",\n            \"vvalarmcode\": \"GREEN\",\n            \"vvalarmkop\": \"Geen waarschuwing\",\n            \"vvalarmtekst\": \"-\",\n            \"vvtijd\": \"01/03/2023 13:00\",\n            \"txalarmtype\": \"TX000\",\n            \"txalarmcode\": \"GREEN\",\n            \"txalarmkop\": \"Geen waarschuwing\",\n            \"txalarmtekst\": \"-\",\n            \"txtijd\": \"01/03/2023 13:00\",\n            \"wsalarmtype\": \"WS000\",\n            \"wsalarmcode\": \"GREEN\",\n            \"wsalarmkop\": \"Geen waarschuwing\",\n            \"wsalarmtekst\": \"-\",\n            \"wstijd\": \"01/03/2023 13:00\",\n            \"eerste_wsch_type\": \"-\",\n            \"eerste_wsch_code\": \"-\",\n            \"eerste_wsch_tijd\": \"-\",\n            \"eerste_wsch_kop\": \"-\",\n            \"eerste_wsch_tekst\": \"-\",\n            \"alarmbijgewerkt\": \"01/03/2023 11:28\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Current Meteo data - EU",
+      "item": [
+        {
+          "name": "current by GPS coordinates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{METEOSERVER-URL}}/liveweer_synop.php?lat={{latitude}}&long={{longitude}}&key={{METEOSERVER-APIKEY}}&select=1",
+              "host": [
+                "{{METEOSERVER-URL}}"
+              ],
+              "path": [
+                "liveweer_synop.php"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "{{latitude}}"
+                },
+                {
+                  "key": "long",
+                  "value": "{{longitude}}"
+                },
+                {
+                  "key": "key",
+                  "value": "{{METEOSERVER-APIKEY}}"
+                },
+                {
+                  "key": "select",
+                  "value": "1"
+                },
+                {
+                  "key": "xml",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "EU - current by GPS coordinates",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/liveweer_synop.php?lat=40.621252360274745&long=22.911007889412087&key={{METEOSERVER-APIKEY}}&select=1",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "liveweer_synop.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "40.621252360274745"
+                    },
+                    {
+                      "key": "long",
+                      "value": "22.911007889412087"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    },
+                    {
+                      "key": "select",
+                      "value": "1"
+                    },
+                    {
+                      "key": "xml",
+                      "value": "true",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.20.1"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 12:46:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.2.34"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"liveweer\": [\n        {\n            \"plaats\": \"Thessaloníki\",\n            \"station\": \"THESSALONIKI/MIK\",\n            \"temp\": \"13\",\n            \"gtemp\": \"13\",\n            \"samenv\": \"Licht bewolkt\",\n            \"pweather\": \"Dry\",\n            \"lv\": \"94\",\n            \"windr\": \"WNW\",\n            \"windrgr\": \"292\",\n            \"windms\": \"1\",\n            \"winds\": \"1\",\n            \"windk\": \"2.06\",\n            \"windkmh\": \"4\",\n            \"luchtd\": \"1019\",\n            \"ldmmhg\": \"764\",\n            \"dauwp\": \"12\",\n            \"zicht\": \"10\",\n            \"verw\": \"Zwaar bewolkt. Windkracht 0 uit noordelijke richting, °C tot °C.\",\n            \"sup\": \"06:00\",\n            \"sunder\": \"17:20\",\n            \"image\": \"lichtbewolkt\",\n            \"d0weer\": \"\",\n            \"d0tmax\": \"\",\n            \"d0tmin\": \"\",\n            \"d0windk\": \"0\",\n            \"d0windknp\": \"0\",\n            \"d0windms\": \"0\",\n            \"d0windkmh\": \"0\",\n            \"d0windr\": \"N\",\n            \"d0windrgr\": \"0\",\n            \"d0neerslag\": \"\",\n            \"d0zon\": \"\",\n            \"d1weer\": \"\",\n            \"d1tmax\": \"\",\n            \"d1tmin\": \"\",\n            \"d1windk\": \"0\",\n            \"d1windknp\": \"0\",\n            \"d1windms\": \"0\",\n            \"d1windkmh\": \"0\",\n            \"d1windr\": \"Z\",\n            \"d1windrgr\": \"180\",\n            \"d1neerslag\": \"30\",\n            \"d1zon\": \"50\",\n            \"d2weer\": \"\",\n            \"d2tmax\": \"\",\n            \"d2tmin\": \"\",\n            \"d2windk\": \"0\",\n            \"d2windknp\": \"0\",\n            \"d2windms\": \"0\",\n            \"d2windkmh\": \"0\",\n            \"d2windr\": \"Z\",\n            \"d2windrgr\": \"180\",\n            \"d2neerslag\": \"30\",\n            \"d2zon\": \"50\",\n            \"alarm\": \"0\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "EU - current by city name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{METEOSERVER-URL}}/liveweer_synop.php?locatie={{city name}}&dag=20230301&key={{METEOSERVER-APIKEY}}",
+              "host": [
+                "{{METEOSERVER-URL}}"
+              ],
+              "path": [
+                "liveweer_synop.php"
+              ],
+              "query": [
+                {
+                  "key": "locatie",
+                  "value": "{{city name}}"
+                },
+                {
+                  "key": "dag",
+                  "value": "20230301"
+                },
+                {
+                  "key": "key",
+                  "value": "{{METEOSERVER-APIKEY}}"
+                },
+                {
+                  "key": "xml",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "EU - current by city name - Berlin",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/liveweer_synop.php?locatie=Berlin&dag=20230301&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "liveweer_synop.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "locatie",
+                      "value": "Berlin"
+                    },
+                    {
+                      "key": "dag",
+                      "value": "20230301"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    },
+                    {
+                      "key": "xml",
+                      "value": "true",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.20.1"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 12:51:16 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.2.34"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "Locaties buiten Europa zijn niet beschikbaar                            \n"
+            },
+            {
+              "name": "EU - current by city name - Thessaloniki",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/liveweer_synop.php?locatie=Thessaloniki&dag=20230301&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "liveweer_synop.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "locatie",
+                      "value": "Thessaloniki"
+                    },
+                    {
+                      "key": "dag",
+                      "value": "20230301"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    },
+                    {
+                      "key": "xml",
+                      "value": "true",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.20.1"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 12:52:01 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.2.34"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "Locaties buiten Europa zijn niet beschikbaar                            \n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Historical data",
+      "item": [
+        {
+          "name": "historie by GPS coordinates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{METEOSERVER-URL}}/historie.php?lat={{latitude}}&long={{longitude}}&dag=20230301&key={{METEOSERVER-APIKEY}}",
+              "host": [
+                "{{METEOSERVER-URL}}"
+              ],
+              "path": [
+                "historie.php"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "{{latitude}}"
+                },
+                {
+                  "key": "long",
+                  "value": "{{longitude}}"
+                },
+                {
+                  "key": "dag",
+                  "value": "20230301"
+                },
+                {
+                  "key": "key",
+                  "value": "{{METEOSERVER-APIKEY}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "without subscription",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/historie.php?lat=52.1052957&long=5.1706729&dag=20230301&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "historie.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "52.1052957"
+                    },
+                    {
+                      "key": "long",
+                      "value": "5.1706729"
+                    },
+                    {
+                      "key": "dag",
+                      "value": "20230301"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.20.1"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 12:32:17 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.2.34"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"pro_only\": \"Deze API vereist een abonnement, activeer deze op https://meteoserver.nl/account.php\"\n}"
+            },
+            {
+              "name": "historie by GPS coordinates",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/historie.php?lat=52.1052957&long=5.1706729&dag=20230301&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "historie.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "52.1052957"
+                    },
+                    {
+                      "key": "long",
+                      "value": "5.1706729"
+                    },
+                    {
+                      "key": "dag",
+                      "value": "20230301"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.12.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 09 Oct 2023 14:32:51 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.3.29"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"locatie\": [\n        {\n            \"weerstation\": \"DE_BILT\"\n        }\n    ],\n    \"waarneming\": [\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"1\",\n            \"windr\": \"20\",\n            \"winds\": \"1\",\n            \"windsu\": \"2\",\n            \"windstoot\": \"3\",\n            \"temp\": \"-4.2\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-4.9\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1032\",\n            \"zicht\": \"8000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"94\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"2\",\n            \"windr\": \"20\",\n            \"winds\": \"1\",\n            \"windsu\": \"1\",\n            \"windstoot\": \"2\",\n            \"temp\": \"-4.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-5.3\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1031\",\n            \"zicht\": \"7000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"94\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"3\",\n            \"windr\": \"30\",\n            \"winds\": \"1\",\n            \"windsu\": \"2\",\n            \"windstoot\": \"3\",\n            \"temp\": \"-4.7\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-5.3\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1031\",\n            \"zicht\": \"7000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"95\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"4\",\n            \"windr\": \"30\",\n            \"winds\": \"1\",\n            \"windsu\": \"1\",\n            \"windstoot\": \"3\",\n            \"temp\": \"-4.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-5.5\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1031\",\n            \"zicht\": \"6000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"93\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"5\",\n            \"windr\": \"60\",\n            \"winds\": \"1\",\n            \"windsu\": \"1\",\n            \"windstoot\": \"2\",\n            \"temp\": \"-5.3\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-6.2\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1031\",\n            \"zicht\": \"4500\",\n            \"bewolking\": \"0\",\n            \"rv\": \"93\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"6\",\n            \"windr\": \"30\",\n            \"winds\": \"1\",\n            \"windsu\": \"1\",\n            \"windstoot\": \"2\",\n            \"temp\": \"-5.6\",\n            \"mintemp\": \"-8.2\",\n            \"dauwp\": \"-6.5\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1030\",\n            \"zicht\": \"6000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"93\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"7\",\n            \"windr\": \"30\",\n            \"winds\": \"1\",\n            \"windsu\": \"1\",\n            \"windstoot\": \"2\",\n            \"temp\": \"-4.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-5.6\",\n            \"zonduur\": \"18\",\n            \"straling\": \"5\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1030\",\n            \"zicht\": \"5000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"93\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"8\",\n            \"windr\": \"40\",\n            \"winds\": \"1\",\n            \"windsu\": \"2\",\n            \"windstoot\": \"3\",\n            \"temp\": \"0.0\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-2.5\",\n            \"zonduur\": \"60\",\n            \"straling\": \"45\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1030\",\n            \"zicht\": \"14000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"83\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"9\",\n            \"windr\": \"70\",\n            \"winds\": \"2\",\n            \"windsu\": \"2\",\n            \"windstoot\": \"3\",\n            \"temp\": \"2.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-2.6\",\n            \"zonduur\": \"60\",\n            \"straling\": \"96\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1030\",\n            \"zicht\": \"30000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"68\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"10\",\n            \"windr\": \"60\",\n            \"winds\": \"3\",\n            \"windsu\": \"3\",\n            \"windstoot\": \"5\",\n            \"temp\": \"4.7\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-3.4\",\n            \"zonduur\": \"60\",\n            \"straling\": \"142\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1029\",\n            \"zicht\": \"45000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"55\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"11\",\n            \"windr\": \"70\",\n            \"winds\": \"4\",\n            \"windsu\": \"4\",\n            \"windstoot\": \"6\",\n            \"temp\": \"5.7\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-4.4\",\n            \"zonduur\": \"60\",\n            \"straling\": \"171\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1029\",\n            \"zicht\": \"45000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"48\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"12\",\n            \"windr\": \"30\",\n            \"winds\": \"4\",\n            \"windsu\": \"5\",\n            \"windstoot\": \"8\",\n            \"temp\": \"6.4\",\n            \"mintemp\": \"-8.2\",\n            \"dauwp\": \"-4.4\",\n            \"zonduur\": \"60\",\n            \"straling\": \"184\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1028\",\n            \"zicht\": \"40000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"46\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"13\",\n            \"windr\": \"50\",\n            \"winds\": \"5\",\n            \"windsu\": \"5\",\n            \"windstoot\": \"8\",\n            \"temp\": \"6.9\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-5.0\",\n            \"zonduur\": \"60\",\n            \"straling\": \"188\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1028\",\n            \"zicht\": \"40000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"42\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"14\",\n            \"windr\": \"50\",\n            \"winds\": \"5\",\n            \"windsu\": \"5\",\n            \"windstoot\": \"9\",\n            \"temp\": \"7.1\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-5.6\",\n            \"zonduur\": \"60\",\n            \"straling\": \"166\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1027\",\n            \"zicht\": \"40000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"40\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"15\",\n            \"windr\": \"60\",\n            \"winds\": \"5\",\n            \"windsu\": \"4\",\n            \"windstoot\": \"8\",\n            \"temp\": \"7.5\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-4.6\",\n            \"zonduur\": \"60\",\n            \"straling\": \"124\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"40000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"41\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"16\",\n            \"windr\": \"70\",\n            \"winds\": \"4\",\n            \"windsu\": \"4\",\n            \"windstoot\": \"8\",\n            \"temp\": \"7.1\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-5.3\",\n            \"zonduur\": \"60\",\n            \"straling\": \"79\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"40000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"40\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"17\",\n            \"windr\": \"60\",\n            \"winds\": \"4\",\n            \"windsu\": \"4\",\n            \"windstoot\": \"8\",\n            \"temp\": \"5.9\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-4.9\",\n            \"zonduur\": \"42\",\n            \"straling\": \"30\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"45000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"45\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"18\",\n            \"windr\": \"60\",\n            \"winds\": \"3\",\n            \"windsu\": \"3\",\n            \"windstoot\": \"7\",\n            \"temp\": \"4.4\",\n            \"mintemp\": \"1.2\",\n            \"dauwp\": \"-4.9\",\n            \"zonduur\": \"0\",\n            \"straling\": \"1\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"45000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"51\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"19\",\n            \"windr\": \"50\",\n            \"winds\": \"3\",\n            \"windsu\": \"3\",\n            \"windstoot\": \"5\",\n            \"temp\": \"3.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-4.8\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"45000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"54\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"20\",\n            \"windr\": \"40\",\n            \"winds\": \"3\",\n            \"windsu\": \"3\",\n            \"windstoot\": \"5\",\n            \"temp\": \"2.8\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-4.5\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"45000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"58\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"21\",\n            \"windr\": \"50\",\n            \"winds\": \"3\",\n            \"windsu\": \"3\",\n            \"windstoot\": \"6\",\n            \"temp\": \"2.0\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-3.9\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"30000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"65\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"22\",\n            \"windr\": \"30\",\n            \"winds\": \"3\",\n            \"windsu\": \"3\",\n            \"windstoot\": \"5\",\n            \"temp\": \"1.7\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-3.7\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"30000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"67\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"23\",\n            \"windr\": \"30\",\n            \"winds\": \"3\",\n            \"windsu\": \"3\",\n            \"windstoot\": \"5\",\n            \"temp\": \"1.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-2.3\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"75\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"24\",\n            \"windr\": \"40\",\n            \"winds\": \"4\",\n            \"windsu\": \"4\",\n            \"windstoot\": \"7\",\n            \"temp\": \"1.5\",\n            \"mintemp\": \"-1.4\",\n            \"dauwp\": \"-0.4\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"7000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"87\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "historie by city name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{METEOSERVER-URL}}/historie.php?locatie={{city name}}&dag=20230301&key={{METEOSERVER-APIKEY}}",
+              "host": [
+                "{{METEOSERVER-URL}}"
+              ],
+              "path": [
+                "historie.php"
+              ],
+              "query": [
+                {
+                  "key": "locatie",
+                  "value": "{{city name}}"
+                },
+                {
+                  "key": "dag",
+                  "value": "20230301"
+                },
+                {
+                  "key": "key",
+                  "value": "{{METEOSERVER-APIKEY}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "without subscription",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/historie.php?locatie=Amsterdam&dag=20230301&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "historie.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "locatie",
+                      "value": "Amsterdam"
+                    },
+                    {
+                      "key": "dag",
+                      "value": "20230301"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.12.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 12:35:09 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.3.29"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"pro_only\": \"Deze API vereist een abonnement, activeer deze op https://meteoserver.nl/account.php\"\n}"
+            },
+            {
+              "name": "historie by city name",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/historie.php?locatie=Amsterdam&dag=20230301&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "historie.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "locatie",
+                      "value": "Amsterdam"
+                    },
+                    {
+                      "key": "dag",
+                      "value": "20230301"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.20.1"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 09 Oct 2023 14:31:31 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.4.33"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"locatie\": [\n        {\n            \"weerstation\": \"SCHIPHOL\"\n        }\n    ],\n    \"waarneming\": [\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"1\",\n            \"windr\": \"20\",\n            \"winds\": \"2\",\n            \"windsu\": \"2\",\n            \"windstoot\": \"3\",\n            \"temp\": \"-0.1\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-0.2\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1032\",\n            \"zicht\": \"2300\",\n            \"bewolking\": \"0\",\n            \"rv\": \"98\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"2\",\n            \"windr\": \"340\",\n            \"winds\": \"1\",\n            \"windsu\": \"1\",\n            \"windstoot\": \"2\",\n            \"temp\": \"-1.3\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-1.4\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1032\",\n            \"zicht\": \"100\",\n            \"bewolking\": \"0\",\n            \"rv\": \"99\",\n            \"code\": \"35\",\n            \"mist\": \"1\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"1\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"3\",\n            \"windr\": \"20\",\n            \"winds\": \"1\",\n            \"windsu\": \"1\",\n            \"windstoot\": \"3\",\n            \"temp\": \"-2.0\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-2.1\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1031\",\n            \"zicht\": \"0\",\n            \"bewolking\": \"0\",\n            \"rv\": \"99\",\n            \"code\": \"35\",\n            \"mist\": \"1\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"1\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"4\",\n            \"windr\": \"0\",\n            \"winds\": \"1\",\n            \"windsu\": \"0\",\n            \"windstoot\": \"2\",\n            \"temp\": \"-2.3\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-2.4\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1031\",\n            \"zicht\": \"0\",\n            \"bewolking\": \"0\",\n            \"rv\": \"99\",\n            \"code\": \"35\",\n            \"mist\": \"1\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"1\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"5\",\n            \"windr\": \"0\",\n            \"winds\": \"1\",\n            \"windsu\": \"0\",\n            \"windstoot\": \"1\",\n            \"temp\": \"-3.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-3.6\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1031\",\n            \"zicht\": \"100\",\n            \"bewolking\": \"0\",\n            \"rv\": \"99\",\n            \"code\": \"35\",\n            \"mist\": \"1\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"1\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"6\",\n            \"windr\": \"340\",\n            \"winds\": \"1\",\n            \"windsu\": \"2\",\n            \"windstoot\": \"5\",\n            \"temp\": \"-3.0\",\n            \"mintemp\": \"-7.3\",\n            \"dauwp\": \"-3.1\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1030\",\n            \"zicht\": \"200\",\n            \"bewolking\": \"0\",\n            \"rv\": \"99\",\n            \"code\": \"35\",\n            \"mist\": \"1\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"1\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"7\",\n            \"windr\": \"340\",\n            \"winds\": \"1\",\n            \"windsu\": \"2\",\n            \"windstoot\": \"8\",\n            \"temp\": \"-2.4\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-2.6\",\n            \"zonduur\": \"18\",\n            \"straling\": \"5\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1030\",\n            \"zicht\": \"100\",\n            \"bewolking\": \"0\",\n            \"rv\": \"98\",\n            \"code\": \"35\",\n            \"mist\": \"1\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"1\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"8\",\n            \"windr\": \"30\",\n            \"winds\": \"1\",\n            \"windsu\": \"1\",\n            \"windstoot\": \"6\",\n            \"temp\": \"-0.1\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-0.4\",\n            \"zonduur\": \"60\",\n            \"straling\": \"45\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1030\",\n            \"zicht\": \"3300\",\n            \"bewolking\": \"0\",\n            \"rv\": \"98\",\n            \"code\": \"20\",\n            \"mist\": \"1\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"1\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"9\",\n            \"windr\": \"360\",\n            \"winds\": \"2\",\n            \"windsu\": \"2\",\n            \"windstoot\": \"8\",\n            \"temp\": \"2.1\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"1.8\",\n            \"zonduur\": \"60\",\n            \"straling\": \"95\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1030\",\n            \"zicht\": \"4500\",\n            \"bewolking\": \"0\",\n            \"rv\": \"98\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"10\",\n            \"windr\": \"20\",\n            \"winds\": \"2\",\n            \"windsu\": \"3\",\n            \"windstoot\": \"6\",\n            \"temp\": \"4.5\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"1.6\",\n            \"zonduur\": \"60\",\n            \"straling\": \"124\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1030\",\n            \"zicht\": \"16000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"81\",\n            \"code\": \"20\",\n            \"mist\": \"1\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"11\",\n            \"windr\": \"70\",\n            \"winds\": \"4\",\n            \"windsu\": \"5\",\n            \"windstoot\": \"7\",\n            \"temp\": \"5.8\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-0.8\",\n            \"zonduur\": \"60\",\n            \"straling\": \"171\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1029\",\n            \"zicht\": \"30000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"62\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"12\",\n            \"windr\": \"40\",\n            \"winds\": \"5\",\n            \"windsu\": \"6\",\n            \"windstoot\": \"8\",\n            \"temp\": \"6.4\",\n            \"mintemp\": \"-6.3\",\n            \"dauwp\": \"-1.3\",\n            \"zonduur\": \"60\",\n            \"straling\": \"190\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1029\",\n            \"zicht\": \"19000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"57\",\n            \"code\": \"2\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"13\",\n            \"windr\": \"50\",\n            \"winds\": \"6\",\n            \"windsu\": \"6\",\n            \"windstoot\": \"9\",\n            \"temp\": \"6.4\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-1.1\",\n            \"zonduur\": \"60\",\n            \"straling\": \"187\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1028\",\n            \"zicht\": \"29000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"59\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"14\",\n            \"windr\": \"50\",\n            \"winds\": \"6\",\n            \"windsu\": \"5\",\n            \"windstoot\": \"9\",\n            \"temp\": \"6.5\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-1.0\",\n            \"zonduur\": \"60\",\n            \"straling\": \"164\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1027\",\n            \"zicht\": \"30000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"58\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"15\",\n            \"windr\": \"60\",\n            \"winds\": \"6\",\n            \"windsu\": \"5\",\n            \"windstoot\": \"8\",\n            \"temp\": \"6.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-1.1\",\n            \"zonduur\": \"60\",\n            \"straling\": \"129\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"27000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"58\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"16\",\n            \"windr\": \"50\",\n            \"winds\": \"6\",\n            \"windsu\": \"6\",\n            \"windstoot\": \"10\",\n            \"temp\": \"6.3\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-2.0\",\n            \"zonduur\": \"60\",\n            \"straling\": \"78\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"35000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"55\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"17\",\n            \"windr\": \"60\",\n            \"winds\": \"6\",\n            \"windsu\": \"5\",\n            \"windstoot\": \"10\",\n            \"temp\": \"5.4\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-1.8\",\n            \"zonduur\": \"42\",\n            \"straling\": \"30\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"40000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"59\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"18\",\n            \"windr\": \"60\",\n            \"winds\": \"5\",\n            \"windsu\": \"4\",\n            \"windstoot\": \"8\",\n            \"temp\": \"4.4\",\n            \"mintemp\": \"2.7\",\n            \"dauwp\": \"-1.5\",\n            \"zonduur\": \"0\",\n            \"straling\": \"1\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"30000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"65\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"19\",\n            \"windr\": \"60\",\n            \"winds\": \"4\",\n            \"windsu\": \"4\",\n            \"windstoot\": \"7\",\n            \"temp\": \"4.1\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-1.0\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"30000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"69\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"20\",\n            \"windr\": \"60\",\n            \"winds\": \"5\",\n            \"windsu\": \"4\",\n            \"windstoot\": \"7\",\n            \"temp\": \"3.1\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-0.7\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"76\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"21\",\n            \"windr\": \"70\",\n            \"winds\": \"5\",\n            \"windsu\": \"4\",\n            \"windstoot\": \"9\",\n            \"temp\": \"3.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-0.3\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"75\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"22\",\n            \"windr\": \"50\",\n            \"winds\": \"4\",\n            \"windsu\": \"4\",\n            \"windstoot\": \"7\",\n            \"temp\": \"3.2\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"-0.2\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1027\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"78\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"23\",\n            \"windr\": \"50\",\n            \"winds\": \"4\",\n            \"windsu\": \"4\",\n            \"windstoot\": \"7\",\n            \"temp\": \"2.9\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"1.4\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"8000\",\n            \"bewolking\": \"0\",\n            \"rv\": \"90\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230301\",\n            \"uur\": \"24\",\n            \"windr\": \"50\",\n            \"winds\": \"5\",\n            \"windsu\": \"6\",\n            \"windstoot\": \"8\",\n            \"temp\": \"3.2\",\n            \"mintemp\": \"1.0\",\n            \"dauwp\": \"2.3\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1026\",\n            \"zicht\": \"6000\",\n            \"bewolking\": \"88\",\n            \"rv\": \"93\",\n            \"code\": \"10\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "historie by post code",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{METEOSERVER-URL}}/historie.php?pc={{postcode}}&dag=20230920&key={{METEOSERVER-APIKEY}}",
+              "host": [
+                "{{METEOSERVER-URL}}"
+              ],
+              "path": [
+                "historie.php"
+              ],
+              "query": [
+                {
+                  "key": "pc",
+                  "value": "{{postcode}}"
+                },
+                {
+                  "key": "dag",
+                  "value": "20230920"
+                },
+                {
+                  "key": "key",
+                  "value": "{{METEOSERVER-APIKEY}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "without subscription",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/historie.php?pc=1111AA&dag=20230301&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "historie.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "1111AA"
+                    },
+                    {
+                      "key": "dag",
+                      "value": "20230301"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.12.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 12:36:17 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.3.29"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"pro_only\": \"Deze API vereist een abonnement, activeer deze op https://meteoserver.nl/account.php\"\n}"
+            },
+            {
+              "name": "historie by post code",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/historie.php?pc=1067DE&dag=20230920&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "historie.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "1067DE"
+                    },
+                    {
+                      "key": "dag",
+                      "value": "20230920"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.12.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 09 Oct 2023 14:33:00 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.3.29"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"locatie\": [\n        {\n            \"weerstation\": \"SCHIPHOL\"\n        }\n    ],\n    \"waarneming\": [\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"1\",\n            \"windr\": \"210\",\n            \"winds\": \"9\",\n            \"windsu\": \"10\",\n            \"windstoot\": \"14\",\n            \"temp\": \"17.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"15.1\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1007\",\n            \"zicht\": \"20000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"85\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"2\",\n            \"windr\": \"210\",\n            \"winds\": \"8\",\n            \"windsu\": \"8\",\n            \"windstoot\": \"14\",\n            \"temp\": \"17.3\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.9\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1006\",\n            \"zicht\": \"20000\",\n            \"bewolking\": \"88\",\n            \"rv\": \"85\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"3\",\n            \"windr\": \"200\",\n            \"winds\": \"8\",\n            \"windsu\": \"7\",\n            \"windstoot\": \"12\",\n            \"temp\": \"17.3\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.4\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1006\",\n            \"zicht\": \"20000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"82\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"4\",\n            \"windr\": \"200\",\n            \"winds\": \"7\",\n            \"windsu\": \"7\",\n            \"windstoot\": \"11\",\n            \"temp\": \"17.2\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.4\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1005\",\n            \"zicht\": \"20000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"83\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"5\",\n            \"windr\": \"190\",\n            \"winds\": \"7\",\n            \"windsu\": \"7\",\n            \"windstoot\": \"10\",\n            \"temp\": \"17.3\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.3\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1005\",\n            \"zicht\": \"20000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"82\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"6\",\n            \"windr\": \"190\",\n            \"winds\": \"8\",\n            \"windsu\": \"7\",\n            \"windstoot\": \"12\",\n            \"temp\": \"16.9\",\n            \"mintemp\": \"16.3\",\n            \"dauwp\": \"14.3\",\n            \"zonduur\": \"0\",\n            \"straling\": \"2\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1005\",\n            \"zicht\": \"20000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"84\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"7\",\n            \"windr\": \"190\",\n            \"winds\": \"8\",\n            \"windsu\": \"8\",\n            \"windstoot\": \"11\",\n            \"temp\": \"17.0\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.3\",\n            \"zonduur\": \"0\",\n            \"straling\": \"10\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1005\",\n            \"zicht\": \"20000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"83\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"8\",\n            \"windr\": \"200\",\n            \"winds\": \"9\",\n            \"windsu\": \"9\",\n            \"windstoot\": \"14\",\n            \"temp\": \"17.3\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.4\",\n            \"zonduur\": \"0\",\n            \"straling\": \"23\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1005\",\n            \"zicht\": \"20000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"82\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"9\",\n            \"windr\": \"200\",\n            \"winds\": \"10\",\n            \"windsu\": \"10\",\n            \"windstoot\": \"14\",\n            \"temp\": \"17.9\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.5\",\n            \"zonduur\": \"0\",\n            \"straling\": \"39\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1005\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"80\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"10\",\n            \"windr\": \"200\",\n            \"winds\": \"10\",\n            \"windsu\": \"10\",\n            \"windstoot\": \"14\",\n            \"temp\": \"17.8\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.7\",\n            \"zonduur\": \"0\",\n            \"straling\": \"36\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1005\",\n            \"zicht\": \"20000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"81\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"11\",\n            \"windr\": \"190\",\n            \"winds\": \"9\",\n            \"windsu\": \"9\",\n            \"windstoot\": \"13\",\n            \"temp\": \"18.3\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.5\",\n            \"zonduur\": \"0\",\n            \"straling\": \"53\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1005\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"78\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"12\",\n            \"windr\": \"200\",\n            \"winds\": \"9\",\n            \"windsu\": \"8\",\n            \"windstoot\": \"13\",\n            \"temp\": \"20.3\",\n            \"mintemp\": \"16.6\",\n            \"dauwp\": \"15.4\",\n            \"zonduur\": \"12\",\n            \"straling\": \"58\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1004\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"73\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"13\",\n            \"windr\": \"200\",\n            \"winds\": \"9\",\n            \"windsu\": \"9\",\n            \"windstoot\": \"13\",\n            \"temp\": \"20.3\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.5\",\n            \"zonduur\": \"6\",\n            \"straling\": \"82\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1004\",\n            \"zicht\": \"30000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"69\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"14\",\n            \"windr\": \"190\",\n            \"winds\": \"10\",\n            \"windsu\": \"10\",\n            \"windstoot\": \"15\",\n            \"temp\": \"20.9\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.4\",\n            \"zonduur\": \"24\",\n            \"straling\": \"136\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1003\",\n            \"zicht\": \"30000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"66\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"15\",\n            \"windr\": \"200\",\n            \"winds\": \"10\",\n            \"windsu\": \"10\",\n            \"windstoot\": \"15\",\n            \"temp\": \"20.8\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.8\",\n            \"zonduur\": \"0\",\n            \"straling\": \"50\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1003\",\n            \"zicht\": \"30000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"68\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"16\",\n            \"windr\": \"180\",\n            \"winds\": \"9\",\n            \"windsu\": \"8\",\n            \"windstoot\": \"14\",\n            \"temp\": \"20.8\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.8\",\n            \"zonduur\": \"18\",\n            \"straling\": \"62\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1003\",\n            \"zicht\": \"30000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"68\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"17\",\n            \"windr\": \"180\",\n            \"winds\": \"8\",\n            \"windsu\": \"7\",\n            \"windstoot\": \"13\",\n            \"temp\": \"20.0\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.6\",\n            \"zonduur\": \"48\",\n            \"straling\": \"40\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1002\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"71\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"18\",\n            \"windr\": \"170\",\n            \"winds\": \"7\",\n            \"windsu\": \"7\",\n            \"windstoot\": \"10\",\n            \"temp\": \"19.7\",\n            \"mintemp\": \"19.0\",\n            \"dauwp\": \"14.5\",\n            \"zonduur\": \"0\",\n            \"straling\": \"1\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1002\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"71\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"19\",\n            \"windr\": \"160\",\n            \"winds\": \"6\",\n            \"windsu\": \"6\",\n            \"windstoot\": \"9\",\n            \"temp\": \"18.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.1\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1002\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"75\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"20\",\n            \"windr\": \"160\",\n            \"winds\": \"6\",\n            \"windsu\": \"6\",\n            \"windstoot\": \"9\",\n            \"temp\": \"18.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.0\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1001\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"74\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"21\",\n            \"windr\": \"150\",\n            \"winds\": \"7\",\n            \"windsu\": \"7\",\n            \"windstoot\": \"9\",\n            \"temp\": \"18.3\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.2\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"1000\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"77\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"22\",\n            \"windr\": \"150\",\n            \"winds\": \"7\",\n            \"windsu\": \"7\",\n            \"windstoot\": \"10\",\n            \"temp\": \"18.2\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.3\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"999\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"77\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"23\",\n            \"windr\": \"160\",\n            \"winds\": \"7\",\n            \"windsu\": \"8\",\n            \"windstoot\": \"11\",\n            \"temp\": \"18.6\",\n            \"mintemp\": \"-\",\n            \"dauwp\": \"14.2\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"998\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"75\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        },\n        {\n            \"datum\": \"20230920\",\n            \"uur\": \"24\",\n            \"windr\": \"160\",\n            \"winds\": \"8\",\n            \"windsu\": \"8\",\n            \"windstoot\": \"12\",\n            \"temp\": \"18.8\",\n            \"mintemp\": \"17.1\",\n            \"dauwp\": \"14.1\",\n            \"zonduur\": \"0\",\n            \"straling\": \"0\",\n            \"neerslduur\": \"0\",\n            \"neerslsom\": \"0\",\n            \"luchtd\": \"998\",\n            \"zicht\": \"25000\",\n            \"bewolking\": \"100\",\n            \"rv\": \"73\",\n            \"code\": \"\",\n            \"mist\": \"0\",\n            \"regen\": \"0\",\n            \"sneeuw\": \"0\",\n            \"onweer\": \"0\",\n            \"ijs\": \"0\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Daily expectations",
+      "item": [
+        {
+          "name": "Daily forecasts by coordinates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{METEOSERVER-URL}}/dagverwachting.php?lat={{latitude}}&long={{longitude}}&key={{METEOSERVER-APIKEY}}",
+              "host": [
+                "{{METEOSERVER-URL}}"
+              ],
+              "path": [
+                "dagverwachting.php"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "{{latitude}}"
+                },
+                {
+                  "key": "long",
+                  "value": "{{longitude}}"
+                },
+                {
+                  "key": "key",
+                  "value": "{{METEOSERVER-APIKEY}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Daily forecasts by coordinates",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/dagverwachting.php?lat=52.1052957&long=5.1706729&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "dagverwachting.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "52.1052957"
+                    },
+                    {
+                      "key": "long",
+                      "value": "5.1706729"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.20.1"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 13:21:46 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.2.34"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"plaatsnaam\": [\n        {\n            \"plaats\": \"De Bilt\"\n        }\n    ],\n    \"data\": [\n        {\n            \"dag\": \"01-03-2023\",\n            \"avg_temp\": \"3\",\n            \"min_temp\": \"-0\",\n            \"max_temp\": \"7\",\n            \"windr\": \"58\",\n            \"windrltr\": \"NO\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"439\",\n            \"zond_perc_dag\": \"61\",\n            \"sup\": \"07:23\",\n            \"sunder\": \"18:19\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"02-03-2023\",\n            \"avg_temp\": \"4\",\n            \"min_temp\": \"-1\",\n            \"max_temp\": \"10\",\n            \"windr\": \"50\",\n            \"windrltr\": \"NO\",\n            \"winds\": \"5\",\n            \"windb\": \"3\",\n            \"windkmh\": \"18\",\n            \"windknp\": \"10\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"435\",\n            \"zond_perc_dag\": \"60\",\n            \"sup\": \"07:21\",\n            \"sunder\": \"18:21\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"03-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"-0\",\n            \"max_temp\": \"10\",\n            \"windr\": \"95\",\n            \"windrltr\": \"O\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"408\",\n            \"zond_perc_dag\": \"57\",\n            \"sup\": \"07:19\",\n            \"sunder\": \"18:23\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"04-03-2023\",\n            \"avg_temp\": \"6\",\n            \"min_temp\": \"4\",\n            \"max_temp\": \"8\",\n            \"windr\": \"168\",\n            \"windrltr\": \"Z\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0.2\",\n            \"neersl_perc_dag\": \"10\",\n            \"tot_zond\": \"206\",\n            \"zond_perc_dag\": \"29\",\n            \"sup\": \"07:17\",\n            \"sunder\": \"18:25\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"05-03-2023\",\n            \"avg_temp\": \"4\",\n            \"min_temp\": \"2\",\n            \"max_temp\": \"6\",\n            \"windr\": \"202\",\n            \"windrltr\": \"Z\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0.7\",\n            \"neersl_perc_dag\": \"40\",\n            \"tot_zond\": \"31\",\n            \"zond_perc_dag\": \"4\",\n            \"sup\": \"07:14\",\n            \"sunder\": \"18:26\",\n            \"toestand\": \"buien\"\n        },\n        {\n            \"dag\": \"06-03-2023\",\n            \"avg_temp\": \"3\",\n            \"min_temp\": \"0\",\n            \"max_temp\": \"6\",\n            \"windr\": \"221\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0.2\",\n            \"neersl_perc_dag\": \"10\",\n            \"tot_zond\": \"263\",\n            \"zond_perc_dag\": \"37\",\n            \"sup\": \"07:12\",\n            \"sunder\": \"18:28\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"07-03-2023\",\n            \"avg_temp\": \"4\",\n            \"min_temp\": \"0\",\n            \"max_temp\": \"7\",\n            \"windr\": \"233\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"1.5\",\n            \"neersl_perc_dag\": \"60\",\n            \"tot_zond\": \"189\",\n            \"zond_perc_dag\": \"26\",\n            \"sup\": \"07:10\",\n            \"sunder\": \"18:30\",\n            \"toestand\": \"buien_zon_wolken\"\n        },\n        {\n            \"dag\": \"08-03-2023\",\n            \"avg_temp\": \"3\",\n            \"min_temp\": \"-0\",\n            \"max_temp\": \"7\",\n            \"windr\": \"233\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"1.2\",\n            \"neersl_perc_dag\": \"50\",\n            \"tot_zond\": \"334\",\n            \"zond_perc_dag\": \"46\",\n            \"sup\": \"07:08\",\n            \"sunder\": \"18:32\",\n            \"toestand\": \"buien_zon_wolken\"\n        },\n        {\n            \"dag\": \"09-03-2023\",\n            \"avg_temp\": \"4\",\n            \"min_temp\": \"1\",\n            \"max_temp\": \"6\",\n            \"windr\": \"232\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0.7\",\n            \"neersl_perc_dag\": \"40\",\n            \"tot_zond\": \"101\",\n            \"zond_perc_dag\": \"14\",\n            \"sup\": \"07:05\",\n            \"sunder\": \"18:33\",\n            \"toestand\": \"buien\"\n        },\n        {\n            \"dag\": \"10-03-2023\",\n            \"avg_temp\": \"4\",\n            \"min_temp\": \"2\",\n            \"max_temp\": \"8\",\n            \"windr\": \"221\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0.2\",\n            \"neersl_perc_dag\": \"10\",\n            \"tot_zond\": \"220\",\n            \"zond_perc_dag\": \"31\",\n            \"sup\": \"07:03\",\n            \"sunder\": \"18:35\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"11-03-2023\",\n            \"avg_temp\": \"0\",\n            \"min_temp\": \"0\",\n            \"max_temp\": \"1\",\n            \"windr\": \"202\",\n            \"windrltr\": \"Z\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"439\",\n            \"zond_perc_dag\": \"61\",\n            \"sup\": \"07:01\",\n            \"sunder\": \"18:37\",\n            \"toestand\": \"halfbewolkt\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Daily forecasts by city - NL",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://data.meteoserver.nl/api/dagverwachting.php?locatie={{city name}}&key={{METEOSERVER-APIKEY}}",
+              "protocol": "https",
+              "host": [
+                "data",
+                "meteoserver",
+                "nl"
+              ],
+              "path": [
+                "api",
+                "dagverwachting.php"
+              ],
+              "query": [
+                {
+                  "key": "locatie",
+                  "value": "{{city name}}"
+                },
+                {
+                  "key": "key",
+                  "value": "{{METEOSERVER-APIKEY}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Daily forecasts by city - NL",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://data.meteoserver.nl/api/dagverwachting.php?locatie=Amsterdam&key={{METEOSERVER-APIKEY}}",
+                  "protocol": "https",
+                  "host": [
+                    "data",
+                    "meteoserver",
+                    "nl"
+                  ],
+                  "path": [
+                    "api",
+                    "dagverwachting.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "locatie",
+                      "value": "Amsterdam"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.12.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 13:24:00 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.3.29"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"plaatsnaam\": [\n        {\n            \"plaats\": \"Amsterdam\"\n        }\n    ],\n    \"data\": [\n        {\n            \"dag\": \"01-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"2\",\n            \"max_temp\": \"8\",\n            \"windr\": \"63\",\n            \"windrltr\": \"NO\",\n            \"winds\": \"3\",\n            \"windb\": \"2\",\n            \"windkmh\": \"10.8\",\n            \"windknp\": \"6\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"440\",\n            \"zond_perc_dag\": \"61\",\n            \"sup\": \"07:25\",\n            \"sunder\": \"18:20\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"02-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"0\",\n            \"max_temp\": \"10\",\n            \"windr\": \"52\",\n            \"windrltr\": \"NO\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"436\",\n            \"zond_perc_dag\": \"61\",\n            \"sup\": \"07:22\",\n            \"sunder\": \"18:22\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"03-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"2\",\n            \"max_temp\": \"9\",\n            \"windr\": \"117\",\n            \"windrltr\": \"ZO\",\n            \"winds\": \"3\",\n            \"windb\": \"2\",\n            \"windkmh\": \"10.8\",\n            \"windknp\": \"6\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"396\",\n            \"zond_perc_dag\": \"55\",\n            \"sup\": \"07:20\",\n            \"sunder\": \"18:24\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"04-03-2023\",\n            \"avg_temp\": \"6\",\n            \"min_temp\": \"5\",\n            \"max_temp\": \"7\",\n            \"windr\": \"184\",\n            \"windrltr\": \"Z\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0.2\",\n            \"neersl_perc_dag\": \"10\",\n            \"tot_zond\": \"194\",\n            \"zond_perc_dag\": \"27\",\n            \"sup\": \"07:18\",\n            \"sunder\": \"18:25\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"05-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"3\",\n            \"max_temp\": \"6\",\n            \"windr\": \"218\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"1.1\",\n            \"neersl_perc_dag\": \"50\",\n            \"tot_zond\": \"22\",\n            \"zond_perc_dag\": \"3\",\n            \"sup\": \"07:16\",\n            \"sunder\": \"18:27\",\n            \"toestand\": \"buien\"\n        },\n        {\n            \"dag\": \"06-03-2023\",\n            \"avg_temp\": \"4\",\n            \"min_temp\": \"2\",\n            \"max_temp\": \"6\",\n            \"windr\": \"222\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"3\",\n            \"windb\": \"2\",\n            \"windkmh\": \"10.8\",\n            \"windknp\": \"6\",\n            \"tot_neersl\": \"0.9\",\n            \"neersl_perc_dag\": \"40\",\n            \"tot_zond\": \"233\",\n            \"zond_perc_dag\": \"32\",\n            \"sup\": \"07:13\",\n            \"sunder\": \"18:29\",\n            \"toestand\": \"buien_zon_wolken\"\n        },\n        {\n            \"dag\": \"07-03-2023\",\n            \"avg_temp\": \"4\",\n            \"min_temp\": \"2\",\n            \"max_temp\": \"7\",\n            \"windr\": \"236\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"2.2\",\n            \"neersl_perc_dag\": \"70\",\n            \"tot_zond\": \"172\",\n            \"zond_perc_dag\": \"24\",\n            \"sup\": \"07:11\",\n            \"sunder\": \"18:31\",\n            \"toestand\": \"regen\"\n        },\n        {\n            \"dag\": \"08-03-2023\",\n            \"avg_temp\": \"4\",\n            \"min_temp\": \"1\",\n            \"max_temp\": \"7\",\n            \"windr\": \"230\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"3\",\n            \"windb\": \"2\",\n            \"windkmh\": \"10.8\",\n            \"windknp\": \"6\",\n            \"tot_neersl\": \"0.3\",\n            \"neersl_perc_dag\": \"20\",\n            \"tot_zond\": \"348\",\n            \"zond_perc_dag\": \"48\",\n            \"sup\": \"07:09\",\n            \"sunder\": \"18:33\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"09-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"3\",\n            \"max_temp\": \"7\",\n            \"windr\": \"231\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0.8\",\n            \"neersl_perc_dag\": \"40\",\n            \"tot_zond\": \"101\",\n            \"zond_perc_dag\": \"14\",\n            \"sup\": \"07:07\",\n            \"sunder\": \"18:34\",\n            \"toestand\": \"buien\"\n        },\n        {\n            \"dag\": \"10-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"3\",\n            \"max_temp\": \"8\",\n            \"windr\": \"225\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0.3\",\n            \"neersl_perc_dag\": \"20\",\n            \"tot_zond\": \"251\",\n            \"zond_perc_dag\": \"35\",\n            \"sup\": \"07:04\",\n            \"sunder\": \"18:36\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"11-03-2023\",\n            \"avg_temp\": \"0\",\n            \"min_temp\": \"0\",\n            \"max_temp\": \"2\",\n            \"windr\": \"206\",\n            \"windrltr\": \"Z\",\n            \"winds\": \"3\",\n            \"windb\": \"2\",\n            \"windkmh\": \"10.8\",\n            \"windknp\": \"6\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"440\",\n            \"zond_perc_dag\": \"61\",\n            \"sup\": \"07:02\",\n            \"sunder\": \"18:38\",\n            \"toestand\": \"halfbewolkt\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "Daily forecasts by city",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://data.meteoserver.nl/api/dagverwachting.php?locatie=Berlin&key={{METEOSERVER-APIKEY}}",
+                  "protocol": "https",
+                  "host": [
+                    "data",
+                    "meteoserver",
+                    "nl"
+                  ],
+                  "path": [
+                    "api",
+                    "dagverwachting.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "locatie",
+                      "value": "Berlin"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.12.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 01 Mar 2023 13:24:00 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/7.3.29"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"plaatsnaam\": [\n        {\n            \"plaats\": \"Amsterdam\"\n        }\n    ],\n    \"data\": [\n        {\n            \"dag\": \"01-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"2\",\n            \"max_temp\": \"8\",\n            \"windr\": \"63\",\n            \"windrltr\": \"NO\",\n            \"winds\": \"3\",\n            \"windb\": \"2\",\n            \"windkmh\": \"10.8\",\n            \"windknp\": \"6\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"440\",\n            \"zond_perc_dag\": \"61\",\n            \"sup\": \"07:25\",\n            \"sunder\": \"18:20\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"02-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"0\",\n            \"max_temp\": \"10\",\n            \"windr\": \"52\",\n            \"windrltr\": \"NO\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"436\",\n            \"zond_perc_dag\": \"61\",\n            \"sup\": \"07:22\",\n            \"sunder\": \"18:22\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"03-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"2\",\n            \"max_temp\": \"9\",\n            \"windr\": \"117\",\n            \"windrltr\": \"ZO\",\n            \"winds\": \"3\",\n            \"windb\": \"2\",\n            \"windkmh\": \"10.8\",\n            \"windknp\": \"6\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"396\",\n            \"zond_perc_dag\": \"55\",\n            \"sup\": \"07:20\",\n            \"sunder\": \"18:24\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"04-03-2023\",\n            \"avg_temp\": \"6\",\n            \"min_temp\": \"5\",\n            \"max_temp\": \"7\",\n            \"windr\": \"184\",\n            \"windrltr\": \"Z\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0.2\",\n            \"neersl_perc_dag\": \"10\",\n            \"tot_zond\": \"194\",\n            \"zond_perc_dag\": \"27\",\n            \"sup\": \"07:18\",\n            \"sunder\": \"18:25\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"05-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"3\",\n            \"max_temp\": \"6\",\n            \"windr\": \"218\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"1.1\",\n            \"neersl_perc_dag\": \"50\",\n            \"tot_zond\": \"22\",\n            \"zond_perc_dag\": \"3\",\n            \"sup\": \"07:16\",\n            \"sunder\": \"18:27\",\n            \"toestand\": \"buien\"\n        },\n        {\n            \"dag\": \"06-03-2023\",\n            \"avg_temp\": \"4\",\n            \"min_temp\": \"2\",\n            \"max_temp\": \"6\",\n            \"windr\": \"222\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"3\",\n            \"windb\": \"2\",\n            \"windkmh\": \"10.8\",\n            \"windknp\": \"6\",\n            \"tot_neersl\": \"0.9\",\n            \"neersl_perc_dag\": \"40\",\n            \"tot_zond\": \"233\",\n            \"zond_perc_dag\": \"32\",\n            \"sup\": \"07:13\",\n            \"sunder\": \"18:29\",\n            \"toestand\": \"buien_zon_wolken\"\n        },\n        {\n            \"dag\": \"07-03-2023\",\n            \"avg_temp\": \"4\",\n            \"min_temp\": \"2\",\n            \"max_temp\": \"7\",\n            \"windr\": \"236\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"2.2\",\n            \"neersl_perc_dag\": \"70\",\n            \"tot_zond\": \"172\",\n            \"zond_perc_dag\": \"24\",\n            \"sup\": \"07:11\",\n            \"sunder\": \"18:31\",\n            \"toestand\": \"regen\"\n        },\n        {\n            \"dag\": \"08-03-2023\",\n            \"avg_temp\": \"4\",\n            \"min_temp\": \"1\",\n            \"max_temp\": \"7\",\n            \"windr\": \"230\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"3\",\n            \"windb\": \"2\",\n            \"windkmh\": \"10.8\",\n            \"windknp\": \"6\",\n            \"tot_neersl\": \"0.3\",\n            \"neersl_perc_dag\": \"20\",\n            \"tot_zond\": \"348\",\n            \"zond_perc_dag\": \"48\",\n            \"sup\": \"07:09\",\n            \"sunder\": \"18:33\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"09-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"3\",\n            \"max_temp\": \"7\",\n            \"windr\": \"231\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0.8\",\n            \"neersl_perc_dag\": \"40\",\n            \"tot_zond\": \"101\",\n            \"zond_perc_dag\": \"14\",\n            \"sup\": \"07:07\",\n            \"sunder\": \"18:34\",\n            \"toestand\": \"buien\"\n        },\n        {\n            \"dag\": \"10-03-2023\",\n            \"avg_temp\": \"5\",\n            \"min_temp\": \"3\",\n            \"max_temp\": \"8\",\n            \"windr\": \"225\",\n            \"windrltr\": \"ZW\",\n            \"winds\": \"4\",\n            \"windb\": \"3\",\n            \"windkmh\": \"14.4\",\n            \"windknp\": \"8\",\n            \"tot_neersl\": \"0.3\",\n            \"neersl_perc_dag\": \"20\",\n            \"tot_zond\": \"251\",\n            \"zond_perc_dag\": \"35\",\n            \"sup\": \"07:04\",\n            \"sunder\": \"18:36\",\n            \"toestand\": \"halfbewolkt\"\n        },\n        {\n            \"dag\": \"11-03-2023\",\n            \"avg_temp\": \"0\",\n            \"min_temp\": \"0\",\n            \"max_temp\": \"2\",\n            \"windr\": \"206\",\n            \"windrltr\": \"Z\",\n            \"winds\": \"3\",\n            \"windb\": \"2\",\n            \"windkmh\": \"10.8\",\n            \"windknp\": \"6\",\n            \"tot_neersl\": \"0\",\n            \"neersl_perc_dag\": \"0\",\n            \"tot_zond\": \"440\",\n            \"zond_perc_dag\": \"61\",\n            \"sup\": \"07:02\",\n            \"sunder\": \"18:38\",\n            \"toestand\": \"halfbewolkt\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hourly weather forecasts",
+      "item": [
+        {
+          "name": "HIGH RESOLUTION, BENELUX 2 DAYS",
+          "item": [
+            {
+              "name": "Hourly per GPS coordinates - ALL EU",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/uurprognose.php?lat={{latitude}}&long={{longitude}}&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "uurprognose.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "{{latitude}}"
+                    },
+                    {
+                      "key": "long",
+                      "value": "{{longitude}}"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Hourly per city name",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/uurprognose.php?locatie={{city name}}&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "uurprognose.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "locatie",
+                      "value": "{{city name}}"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Hourly per zip code",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/uurprognose.php?pc={{postcode}}&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "uurprognose.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "{{postcode}}"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "MEDIUM RESOLUTION, EUROPE, 10 DAYS",
+          "item": [
+            {
+              "name": "Hourly per GPS coordinates - ALL EU",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/uurspiratie_gfs.php?lat=52.1052957&long=5.1706729&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "uurspiratie_gfs.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "52.1052957"
+                    },
+                    {
+                      "key": "long",
+                      "value": "5.1706729"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Hourly per city name",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/uurprognose_gfs .php?locatie=Utrecht&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "uurprognose_gfs .php"
+                  ],
+                  "query": [
+                    {
+                      "key": "locatie",
+                      "value": "Utrecht"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Hourly per zip code",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{METEOSERVER-URL}}/uurspiratie_gfs.php?pc=3511AB&key={{METEOSERVER-APIKEY}}",
+                  "host": [
+                    "{{METEOSERVER-URL}}"
+                  ],
+                  "path": [
+                    "uurspiratie_gfs.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "pc",
+                      "value": "3511AB"
+                    },
+                    {
+                      "key": "key",
+                      "value": "{{METEOSERVER-APIKEY}}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Demo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://weerlive.nl/api/json-data-10min.php?key=demo&locatie={{city name}}",
+          "protocol": "https",
+          "host": [
+            "weerlive",
+            "nl"
+          ],
+          "path": [
+            "api",
+            "json-data-10min.php"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "demo"
+            },
+            {
+              "key": "locatie",
+              "value": "{{city name}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Demo",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://weerlive.nl/api/json-data-10min.php?key=demo&locatie=Amsterdam",
+              "protocol": "https",
+              "host": [
+                "weerlive",
+                "nl"
+              ],
+              "path": [
+                "api",
+                "json-data-10min.php"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "demo"
+                },
+                {
+                  "key": "locatie",
+                  "value": "Amsterdam"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Server",
+              "value": "nginx/1.20.1"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 01 Mar 2023 13:08:38 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/7.2.34"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"liveweer\": [\n        {\n            \"plaats\": \"Amsterdam\",\n            \"temp\": \"6.0\",\n            \"gtemp\": \"2.1\",\n            \"samenv\": \"Onbewolkt\",\n            \"lv\": \"59\",\n            \"windr\": \"NO\",\n            \"windrgr\": \"44\",\n            \"windms\": \"6\",\n            \"winds\": \"4\",\n            \"windk\": \"11.7\",\n            \"windkmh\": \"21.6\",\n            \"luchtd\": \"1028.1\",\n            \"ldmmhg\": \"771\",\n            \"dauwp\": \"-1\",\n            \"zicht\": \"30\",\n            \"verw\": \"Zonnig en droog, in het noordwesten ook bewolking\",\n            \"sup\": \"07:25\",\n            \"sunder\": \"18:20\",\n            \"image\": \"zonnig\",\n            \"d0weer\": \"zonnig\",\n            \"d0tmax\": \"8\",\n            \"d0tmin\": \"0\",\n            \"d0windk\": \"2\",\n            \"d0windknp\": \"6\",\n            \"d0windms\": \"3\",\n            \"d0windkmh\": \"11\",\n            \"d0windr\": \"NO\",\n            \"d0windrgr\": \"44\",\n            \"d0neerslag\": \"0\",\n            \"d0zon\": \"98\",\n            \"d1weer\": \"halfbewolkt\",\n            \"d1tmax\": \"7\",\n            \"d1tmin\": \"-2\",\n            \"d1windk\": \"2\",\n            \"d1windknp\": \"6\",\n            \"d1windms\": \"3\",\n            \"d1windkmh\": \"11\",\n            \"d1windr\": \"NO\",\n            \"d1windrgr\": \"44\",\n            \"d1neerslag\": \"10\",\n            \"d1zon\": \"40\",\n            \"d2weer\": \"bewolkt\",\n            \"d2tmax\": \"9\",\n            \"d2tmin\": \"-1\",\n            \"d2windk\": \"2\",\n            \"d2windknp\": \"6\",\n            \"d2windms\": \"3\",\n            \"d2windkmh\": \"11\",\n            \"d2windr\": \"N\",\n            \"d2windrgr\": \"0\",\n            \"d2neerslag\": \"10\",\n            \"d2zon\": \"20\",\n            \"alarm\": \"0\"\n        }\n    ]\n}"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "METEOSERVER-URL",
+      "value": "https://data.meteoserver.nl/api"
+    },
+    {
+      "key": "METEOSERVER-APIKEY",
+      "value": "a28a4e3b92"
+    }
+  ]
+}

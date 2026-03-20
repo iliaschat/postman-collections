@@ -1,0 +1,420 @@
+{
+  "info": {
+    "_postman_id": "3a9cdec4-a3dd-439a-b9fc-b5469e696e4a",
+    "name": "Wifi NBI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1487263"
+  },
+  "item": [
+    {
+      "name": "Ruckus SmartZone NBI",
+      "item": [
+        {
+          "name": "Login - Synchronous",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Vendor\": \"ruckus\",\n    \"RequestPassword\": \"{{NBIPassword}}\",\n    \"APIVersion\": \"1.0\",\n    \"RequestCategory\": \"UserOnlineControl\",\n    \"RequestType\": \"Login\",\n    \"UE-IP\": \"{{CryptedIP}}\",\n    \"UE-MAC\": \"{{CryptedMAC}}\",\n    \"UE-Proxy\": \"0\",\n    \"UE-Username\": \"{{RadiusUsername}}\",\n    \"UE-Password\": \"{{RadiusPassword}}\"\n}"
+            },
+            "url": {
+              "raw": "https://{{IP}}:9443/portalintf",
+              "protocol": "https",
+              "host": [
+                "{{IP}}"
+              ],
+              "port": "9443",
+              "path": [
+                "portalintf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Terminate",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Vendor\": \"ruckus\",\n    \"RequestPassword\": \"{{NBIPassword}}\",\n    \"APIVersion\": \"1.0\",\n    \"RequestCategory\": \"UserOnlineControl\",\n    \"RequestType\": \"Logout\",\n    \"UE-IP\": \"{{CryptedIP}}\",\n    \"UE-MAC\": \"{{CryptedMAC}}\"\n}"
+            },
+            "url": {
+              "raw": "https://{{IP}}:9443/portalintf",
+              "protocol": "https",
+              "host": [
+                "{{IP}}"
+              ],
+              "port": "9443",
+              "path": [
+                "portalintf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Control IP List",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Vendor\": \"ruckus\",\n    \"RequestPassword\": \"{{NBIPassword}}\",\n    \"APIVersion\": \"1.0\",\n    \"RequestCategory\": \"GetConfig\",\n    \"RequestType\": \"ControlBladeIPList\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://{{IP}}:9443/portalintf",
+              "protocol": "https",
+              "host": [
+                "{{IP}}"
+              ],
+              "port": "9443",
+              "path": [
+                "portalintf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Decrypt",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Vendor\": \"ruckus\",\n    \"RequestPassword\": \"{{NBIPassword}}\",\n    \"APIVersion\": \"1.0\",\n    \"RequestCategory\": \"GetConfig\",\n    \"RequestType\": \"Decrypt\",\n    \"Data\": \"\"\n}"
+            },
+            "url": {
+              "raw": "https://{{IP}}:9443/portalintf",
+              "protocol": "https",
+              "host": [
+                "{{IP}}"
+              ],
+              "port": "9443",
+              "path": [
+                "portalintf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cluster IP List",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Vendor\": \"ruckus\",\n    \"RequestPassword\": \"{{NBIPassword}}\",\n    \"APIVersion\": \"1.0\",\n    \"RequestCategory\": \"GetConfig\",\n    \"RequestType\": \"ClusterBladeIPList\"\n}"
+            },
+            "url": {
+              "raw": "https://{{IP}}:9443/portalintf",
+              "protocol": "https",
+              "host": [
+                "{{IP}}"
+              ],
+              "port": "9443",
+              "path": [
+                "portalintf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Encrypt",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Vendor\": \"ruckus\",\n    \"RequestPassword\": \"{{NBIPassword}}\",\n    \"APIVersion\": \"1.0\",\n    \"RequestCategory\": \"GetConfig\",\n    \"RequestType\": \"Encrypt\",\n    \"Data\": \"172.16.254.254\"\n}"
+            },
+            "url": {
+              "raw": "https://{{IP}}:9443/portalintf",
+              "protocol": "https",
+              "host": [
+                "{{IP}}"
+              ],
+              "port": "9443",
+              "path": [
+                "portalintf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Management IP List",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    Vendor: \"ruckus\",\n    RequestPassword: \"{{NBIPassword}}\",\n    APIVersion: \"1.0\",\n    RequestCategory: \"GetConfig\",\n    RequestType: \"ManagementBladeIPList\"\n}"
+            },
+            "url": {
+              "raw": "https://{{IP}}:9443/portalintf",
+              "protocol": "https",
+              "host": [
+                "{{IP}}"
+              ],
+              "port": "9443",
+              "path": [
+                "portalintf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "User Interface IP List",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    Vendor: \"ruckus\",\n    RequestPassword: \"{{NBIPassword}}\",\n    APIVersion: \"1.0\",\n    RequestCategory: \"GetConfig\",\n    RequestType: \"UserInterfaceIPList\"\n}"
+            },
+            "url": {
+              "raw": "https://{{IP}}:9443/portalintf",
+              "protocol": "https",
+              "host": [
+                "{{IP}}"
+              ],
+              "port": "9443",
+              "path": [
+                "portalintf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login - Asynchronous",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    Vendor: \"ruckus\",\n    RequestPassword: \"{{NBIPassword}}\",\n    APIVersion: \"1.0\",\n    RequestCategory: \"UserOnlineControl\",\n    RequestType: \"LoginAsync\",\n    UE-IP: \"{{CryptedIP}}\",\n    UE-MAC: \"{{CryptedMAC}}\",\n    UE-Proxy: \"0\",\n    UE-Username: \"{{RadiusUsername}}\",\n    UE-Password: \"{{RadiusPassword}}\"\n}"
+            },
+            "url": {
+              "raw": "https://{{IP}}:9443/portalintf",
+              "protocol": "https",
+              "host": [
+                "{{IP}}"
+              ],
+              "port": "9443",
+              "path": [
+                "portalintf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Disconnect",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    Vendor: \"ruckus\",\n    RequestPassword: \"{{NBIPassword}}\",\n    APIVersion: \"1.0\",\n    RequestCategory: \"UserOnlineControl\",\n    RequestType: \"Disconnect\",\n    UE-IP: \"{{CryptedIP}}\",\n    UE-MAC: \"{{CryptedMAC}}\"\n}"
+            },
+            "url": {
+              "raw": "https://{{IP}}:9443/portalintf",
+              "protocol": "https",
+              "host": [
+                "{{IP}}"
+              ],
+              "port": "9443",
+              "path": [
+                "portalintf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Query",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    Vendor: \"ruckus\",\n    RequestPassword: \"{{NBIPassword}}\",\n    APIVersion: \"1.0\",\n    RequestCategory: \"UserOnlineControl\",\n    RequestType: \"Status\",\n    UE-IP: \"{{CryptedIP}}\",\n    UE-MAC: \"{{CryptedMAC}}\"\n}"
+            },
+            "url": {
+              "raw": "https://{{IP}}:9443/portalintf",
+              "protocol": "https",
+              "host": [
+                "{{IP}}"
+              ],
+              "port": "9443",
+              "path": [
+                "portalintf"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Ruckus ZoneDirector NBI",
+      "item": [
+        {
+          "name": "user-authenticate",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<ruckus>\r\n\t<req-password>{{Password}}</req-password>\r\n\t<version>1.0</version>\r\n\t<command cmd=\"user-authenticate\" ipaddr=\"{{IP}}\" macaddr=\"{{MAC}}\" name=\"{{USER}}\" password=\"{{USER_PASS}}\"/>\r\n</ruckus>"
+            },
+            "url": {
+              "raw": "https://{{ZONE_IP}}:443/admin/_portalintf.jsp",
+              "protocol": "https",
+              "host": [
+                "{{ZONE_IP}}"
+              ],
+              "port": "443",
+              "path": [
+                "admin",
+                "_portalintf.jsp"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "check-user-status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<ruckus>\r\n\t<req-password>{{Password}}</req-password>\r\n\t<version>1.0</version>\r\n\t<command cmd=\"check-user-status\" ipaddr=\"{{IP}}\" macaddr=\"{{MAC}}\" user=\"{{USER}}\"/>\r\n</ruckus>"
+            },
+            "url": {
+              "raw": "https://{{ZONE_IP}}:443/admin/_portalintf.jsp",
+              "protocol": "https",
+              "host": [
+                "{{ZONE_IP}}"
+              ],
+              "port": "443",
+              "path": [
+                "admin",
+                "_portalintf.jsp"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "generate-dpsk",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<ruckus>\r\n\t<req-password>{{Password}}</req-password>\r\n\t<version>1.0</version>\r\n\t<command cmd=\"generate-dpsk\">\r\n\t\t<dpsk expiration=\"{{HOURS}}\" key-length=\"{{KEY_LENGTH}}\" user=\"{{USER}}\" mac=\"{{MAC_ADDR}}\" wlan=\"{{SSID}}\" vlan-id=\"{{VLAN_ID}}\"/>\r\n\t</command>\r\n</ruckus>"
+            },
+            "url": {
+              "raw": "https://{{ZONE_IP}}:443/admin/_portalintf.jsp",
+              "protocol": "https",
+              "host": [
+                "{{ZONE_IP}}"
+              ],
+              "port": "443",
+              "path": [
+                "admin",
+                "_portalintf.jsp"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

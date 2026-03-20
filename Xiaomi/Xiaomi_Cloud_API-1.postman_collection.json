@@ -1,0 +1,671 @@
+{
+	"info": {
+		"_postman_id": "xiaomi-cloud-api-collection",
+		"name": "Xiaomi Cloud API Collection",
+		"description": "Collection for extracting Xiaomi cloud tokens and managing devices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://account.xiaomi.com",
+			"type": "string"
+		},
+		{
+			"key": "api_base_url",
+			"value": "https://api.io.mi.com/app",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "password_hash",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "_sign",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "ssecurity",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "serviceToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "userId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "location",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user_agent",
+			"value": "mihome-android-client APP/com.xiaomi.mihome APPV/10.5.201",
+			"type": "string"
+		},
+		{
+			"key": "device_id",
+			"value": "abcdef",
+			"type": "string"
+		},
+		{
+			"key": "server",
+			"value": "cn",
+			"type": "string",
+			"description": "Server region: cn, de, us, ru, tw, sg, in, i2"
+		},
+		{
+			"key": "nonce",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "signed_nonce",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Step 1 - Get Sign Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    const responseText = pm.response.text().replace('&&&START&&&', '');",
+									"    const jsonResponse = JSON.parse(responseText);",
+									"    ",
+									"    if (jsonResponse._sign) {",
+									"        pm.collectionVariables.set('_sign', jsonResponse._sign);",
+									"        console.log('Sign token extracted:', jsonResponse._sign);",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/pass/serviceLogin?sid=xiaomiio&_json=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pass",
+								"serviceLogin"
+							],
+							"query": [
+								{
+									"key": "sid",
+									"value": "xiaomiio"
+								},
+								{
+									"key": "_json",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 2 - Login with Credentials",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    const responseText = pm.response.text().replace('&&&START&&&', '');",
+									"    const jsonResponse = JSON.parse(responseText);",
+									"    ",
+									"    if (jsonResponse.ssecurity) {",
+									"        pm.collectionVariables.set('ssecurity', jsonResponse.ssecurity);",
+									"        pm.collectionVariables.set('userId', jsonResponse.userId);",
+									"        pm.collectionVariables.set('location', jsonResponse.location);",
+									"        console.log('Login successful, tokens extracted');",
+									"    }",
+									"    ",
+									"    if (jsonResponse.captchaUrl) {",
+									"        console.log('Captcha required:', jsonResponse.captchaUrl);",
+									"    }",
+									"    ",
+									"    if (jsonResponse.notificationUrl) {",
+									"        console.log('2FA required:', jsonResponse.notificationUrl);",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Generate MD5 hash of password",
+									"const password = pm.collectionVariables.get('password') || 'your_password_here';",
+									"const passwordHash = CryptoJS.MD5(password).toString().toUpperCase();",
+									"pm.collectionVariables.set('password_hash', passwordHash);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/pass/serviceLoginAuth2?sid=xiaomiio&hash={{password_hash}}&callback=https://sts.api.io.mi.com/sts&qs=%3Fsid%3Dxiaomiio%26_json%3Dtrue&user={{username}}&_sign={{_sign}}&_json=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pass",
+								"serviceLoginAuth2"
+							],
+							"query": [
+								{
+									"key": "sid",
+									"value": "xiaomiio"
+								},
+								{
+									"key": "hash",
+									"value": "{{password_hash}}"
+								},
+								{
+									"key": "callback",
+									"value": "https://sts.api.io.mi.com/sts"
+								},
+								{
+									"key": "qs",
+									"value": "%3Fsid%3Dxiaomiio%26_json%3Dtrue"
+								},
+								{
+									"key": "user",
+									"value": "{{username}}"
+								},
+								{
+									"key": "_sign",
+									"value": "{{_sign}}"
+								},
+								{
+									"key": "_json",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 3 - Get Service Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    const serviceToken = pm.cookies.get('serviceToken');",
+									"    if (serviceToken) {",
+									"        pm.collectionVariables.set('serviceToken', serviceToken);",
+									"        console.log('Service token extracted:', serviceToken);",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{location}}",
+							"host": [
+								"{{location}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Device Management",
+			"item": [
+				{
+					"name": "Get Homes",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Generate nonce and signed nonce for encrypted API calls",
+									"const millis = Date.now();",
+									"const randomBytes = CryptoJS.lib.WordArray.random(8);",
+									"const timeBytes = CryptoJS.enc.Hex.parse((Math.floor(millis / 60000)).toString(16).padStart(8, '0'));",
+									"const nonceBytes = randomBytes.concat(timeBytes);",
+									"const nonce = CryptoJS.enc.Base64.stringify(nonceBytes);",
+									"",
+									"const ssecurity = pm.collectionVariables.get('ssecurity');",
+									"const ssecurityBytes = CryptoJS.enc.Base64.parse(ssecurity);",
+									"const nonceDecoded = CryptoJS.enc.Base64.parse(nonce);",
+									"const combined = ssecurityBytes.concat(nonceDecoded);",
+									"const hash = CryptoJS.SHA256(combined);",
+									"const signedNonce = CryptoJS.enc.Base64.stringify(hash);",
+									"",
+									"pm.collectionVariables.set('nonce', nonce);",
+									"pm.collectionVariables.set('signed_nonce', signedNonce);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Encoding",
+								"value": "identity",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "x-xiaomi-protocal-flag-cli",
+								"value": "PROTOCAL-HTTP2",
+								"type": "text"
+							},
+							{
+								"key": "MIOT-ENCRYPT-ALGORITHM",
+								"value": "ENCRYPT-RC4",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "userId={{userId}}; yetAnotherServiceToken={{serviceToken}}; serviceToken={{serviceToken}}; locale=en_GB; timezone=GMT+02:00; is_daylight=1; dst_offset=3600000; channel=MI_APP_STORE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_base_url}}/v2/homeroom/gethome?data=%7B%22fg%22%3A%20true%2C%20%22fetch_share%22%3A%20true%2C%20%22fetch_share_dev%22%3A%20true%2C%20%22limit%22%3A%20300%2C%20%22app_ver%22%3A%207%7D&ssecurity={{ssecurity}}&_nonce={{nonce}}",
+							"host": [
+								"{{api_base_url}}"
+							],
+							"path": [
+								"v2",
+								"homeroom",
+								"gethome"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "%7B%22fg%22%3A%20true%2C%20%22fetch_share%22%3A%20true%2C%20%22fetch_share_dev%22%3A%20true%2C%20%22limit%22%3A%20300%2C%20%22app_ver%22%3A%207%7D",
+									"description": "{\"fg\": true, \"fetch_share\": true, \"fetch_share_dev\": true, \"limit\": 300, \"app_ver\": 7}"
+								},
+								{
+									"key": "ssecurity",
+									"value": "{{ssecurity}}"
+								},
+								{
+									"key": "_nonce",
+									"value": "{{nonce}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Device Count",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Encoding",
+								"value": "identity",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "x-xiaomi-protocal-flag-cli",
+								"value": "PROTOCAL-HTTP2",
+								"type": "text"
+							},
+							{
+								"key": "MIOT-ENCRYPT-ALGORITHM",
+								"value": "ENCRYPT-RC4",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "userId={{userId}}; yetAnotherServiceToken={{serviceToken}}; serviceToken={{serviceToken}}; locale=en_GB; timezone=GMT+02:00; is_daylight=1; dst_offset=3600000; channel=MI_APP_STORE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_base_url}}/v2/user/get_device_cnt?data=%7B%20%22fetch_own%22%3A%20true%2C%20%22fetch_share%22%3A%20true%7D&ssecurity={{ssecurity}}&_nonce={{nonce}}",
+							"host": [
+								"{{api_base_url}}"
+							],
+							"path": [
+								"v2",
+								"user",
+								"get_device_cnt"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "%7B%20%22fetch_own%22%3A%20true%2C%20%22fetch_share%22%3A%20true%7D",
+									"description": "{ \"fetch_own\": true, \"fetch_share\": true}"
+								},
+								{
+									"key": "ssecurity",
+									"value": "{{ssecurity}}"
+								},
+								{
+									"key": "_nonce",
+									"value": "{{nonce}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Home Device List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Encoding",
+								"value": "identity",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "x-xiaomi-protocal-flag-cli",
+								"value": "PROTOCAL-HTTP2",
+								"type": "text"
+							},
+							{
+								"key": "MIOT-ENCRYPT-ALGORITHM",
+								"value": "ENCRYPT-RC4",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "userId={{userId}}; yetAnotherServiceToken={{serviceToken}}; serviceToken={{serviceToken}}; locale=en_GB; timezone=GMT+02:00; is_daylight=1; dst_offset=3600000; channel=MI_APP_STORE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_base_url}}/v2/home/home_device_list?data=%7B%22home_owner%22%3A%20{{userId}}%2C%22home_id%22%3A%20123456%2C%20%20%22limit%22%3A%20200%2C%20%20%22get_split_device%22%3A%20true%2C%20%22support_smart_home%22%3A%20true%7D&ssecurity={{ssecurity}}&_nonce={{nonce}}",
+							"host": [
+								"{{api_base_url}}"
+							],
+							"path": [
+								"v2",
+								"home",
+								"home_device_list"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "%7B%22home_owner%22%3A%20{{userId}}%2C%22home_id%22%3A%20123456%2C%20%20%22limit%22%3A%20200%2C%20%20%22get_split_device%22%3A%20true%2C%20%22support_smart_home%22%3A%20true%7D",
+									"description": "{\"home_owner\": userId, \"home_id\": home_id, \"limit\": 200, \"get_split_device\": true, \"support_smart_home\": true}"
+								},
+								{
+									"key": "ssecurity",
+									"value": "{{ssecurity}}"
+								},
+								{
+									"key": "_nonce",
+									"value": "{{nonce}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Beacon Key (BLE)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Encoding",
+								"value": "identity",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "{{user_agent}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "x-xiaomi-protocal-flag-cli",
+								"value": "PROTOCAL-HTTP2",
+								"type": "text"
+							},
+							{
+								"key": "MIOT-ENCRYPT-ALGORITHM",
+								"value": "ENCRYPT-RC4",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "userId={{userId}}; yetAnotherServiceToken={{serviceToken}}; serviceToken={{serviceToken}}; locale=en_GB; timezone=GMT+02:00; is_daylight=1; dst_offset=3600000; channel=MI_APP_STORE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_base_url}}/v2/device/blt_get_beaconkey?data=%7B%22did%22%3A%22device_id_here%22%2C%22pdid%22%3A1%7D&ssecurity={{ssecurity}}&_nonce={{nonce}}",
+							"host": [
+								"{{api_base_url}}"
+							],
+							"path": [
+								"v2",
+								"device",
+								"blt_get_beaconkey"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "%7B%22did%22%3A%22device_id_here%22%2C%22pdid%22%3A1%7D",
+									"description": "{\"did\":\"device_id\",\"pdid\":1}"
+								},
+								{
+									"key": "ssecurity",
+									"value": "{{ssecurity}}"
+								},
+								{
+									"key": "_nonce",
+									"value": "{{nonce}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server Variants",
+			"item": [
+				{
+					"name": "China Server (CN)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.io.mi.com/app",
+							"protocol": "https",
+							"host": [
+								"api",
+								"io",
+								"mi",
+								"com"
+							],
+							"path": [
+								"app"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Germany Server (DE)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://de.api.io.mi.com/app",
+							"protocol": "https",
+							"host": [
+								"de",
+								"api",
+								"io",
+								"mi",
+								"com"
+							],
+							"path": [
+								"app"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US Server (US)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://us.api.io.mi.com/app",
+							"protocol": "https",
+							"host": [
+								"us",
+								"api",
+								"io",
+								"mi",
+								"com"
+							],
+							"path": [
+								"app"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Russia Server (RU)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ru.api.io.mi.com/app",
+							"protocol": "https",
+							"host": [
+								"ru",
+								"api",
+								"io",
+								"mi",
+								"com"
+							],
+							"path": [
+								"app"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
